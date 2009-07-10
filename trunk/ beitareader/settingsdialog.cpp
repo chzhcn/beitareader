@@ -24,3 +24,8 @@ void SettingsDialog::changeEvent(QEvent *e)
         break;
     }
 }
+
+Ui::SettingsDialog* SettingsDialog::ui()
+{
+    return this->m_ui;
+}

@@ -13,6 +13,7 @@ class SearchTab : public QWidget {
 public:
     explicit SearchTab(QWidget *parent = 0);
     virtual ~SearchTab();
+    Ui::SearchTab* ui();
 
 protected:
     virtual void changeEvent(QEvent *e);

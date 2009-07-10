@@ -24,3 +24,8 @@ void LoginWidget::changeEvent(QEvent *e)
         break;
     }
 }
+
+Ui::LoginWidget* LoginWidget::ui()
+{
+    return this->m_ui;
+}

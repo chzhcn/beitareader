@@ -2,6 +2,7 @@
 #define SETTINGSDIALOG_H
 
 #include <QtGui/QDialog>
+#include "ui_settingsdialog.h"
 
 namespace Ui {
     class SettingsDialog;
@@ -13,6 +14,7 @@ class SettingsDialog : public QDialog {
 public:
     explicit SettingsDialog(QWidget *parent = 0);
     virtual ~SettingsDialog();
+    Ui::SettingsDialog* ui();
 
 protected:
     virtual void changeEvent(QEvent *e);

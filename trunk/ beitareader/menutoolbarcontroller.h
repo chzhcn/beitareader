@@ -5,7 +5,7 @@
 #include "beitareader.h"
 #include "controlcenter.h"
 #include "addchanneldialog.h"
-#include "ui_beitareader.h"
+//#include "ui_beitareader.h"
 
 class MenuToolBarController : public QObject
 {

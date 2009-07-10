@@ -2,6 +2,7 @@
 #define LOGINWIDGET_H
 
 #include <QtGui/QWidget>
+#include "ui_loginwidget.h"
 
 namespace Ui {
     class LoginWidget;
@@ -13,6 +14,7 @@ class LoginWidget : public QWidget {
 public:
     explicit LoginWidget(QWidget *parent = 0);
     virtual ~LoginWidget();
+    Ui::LoginWidget* ui();
 
 protected:
     virtual void changeEvent(QEvent *e);

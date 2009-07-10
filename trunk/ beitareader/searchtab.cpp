@@ -24,3 +24,8 @@ void SearchTab::changeEvent(QEvent *e)
         break;
     }
 }
+
+Ui::SearchTab* SearchTab::ui()
+{
+    return this->m_ui;
+}
