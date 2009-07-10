@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'brgroupbox.ui'
 **
-** Created: Thu Jul 9 15:59:49 2009
+** Created: Fri Jul 10 13:58:48 2009
 **      by: Qt User Interface Compiler version 4.5.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!

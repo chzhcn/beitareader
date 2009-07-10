@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'addfolderdialog.h'
 **
-** Created: Thu Jul 9 22:24:22 2009
+** Created: Fri Jul 10 14:02:33 2009
 **      by: The Qt Meta Object Compiler version 61 (Qt 4.5.1)
 **
 ** WARNING! All changes made in this file will be lost!
