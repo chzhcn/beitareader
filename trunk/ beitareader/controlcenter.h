@@ -4,6 +4,8 @@
 #include <QObject>
 #include "beitareader.h"
 #include "menutoolbarcontroller.h"
+#include "user.h"
+#include "nlogincontroller.h"
 
 class MenuToolBarController;
 class ControlCenter : public QObject
@@ -12,8 +14,9 @@ class ControlCenter : public QObject
 
 public:
     ControlCenter();
-    ControlCenter(BeitaReader*);
+    ControlCenter(BeitaReader*,User);
     ~ControlCenter();
+    User user;
 
 private:
     BeitaReader *main;

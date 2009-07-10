@@ -30,6 +30,8 @@ public:
     static int getUserIDByName(QString newName);
     static void createUser(QString newName,QString newPassword);
     static void deleteUserByName(QString newName);
+    // to do:
+    static int checkPassword(QString,QString);
 private:
     int id;
     QString name;

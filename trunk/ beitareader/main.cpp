@@ -1,6 +1,5 @@
 #include <QtGui/QApplication>
-#include "beitareader.h"
-#include "controlcenter.h"
+#include "nlogincontroller.h"
 
 int main(int argc, char *argv[])
 {
@@ -11,7 +10,9 @@ int main(int argc, char *argv[])
         db.open();
 
     BeitaReader w;
-    ControlCenter c(&w);
-    w.show();
+    LoginWidget l;
+    LoginController lc(&l,&w);
+    l.show();
+
     return a.exec();
 }

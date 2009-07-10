@@ -113,3 +113,11 @@ int User::getUserIDByName(QString newName)
     User user = User::getUserByName(newName);
     return user.id;
 }
+
+//To be implement
+//if right return its id;
+//if wrong return 0;
+int User::checkPassword(QString name,QString password)
+{
+    return 1;
+}
