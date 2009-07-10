@@ -24,3 +24,8 @@ void BRGroupBox::changeEvent(QEvent *e)
         break;
     }
 }
+
+Ui::BRGroupBox* BRGroupBox::ui()
+{
+    return this->m_ui;
+}

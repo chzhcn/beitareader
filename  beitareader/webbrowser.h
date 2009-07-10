@@ -2,6 +2,7 @@
 #define WEBBROWSER_H
 
 #include <QtGui/QWidget>
+#include "ui_webbrowser.h"
 
 namespace Ui {
     class WebBrowser;
@@ -13,6 +14,7 @@ class WebBrowser : public QWidget {
 public:
     explicit WebBrowser(QWidget *parent = 0);
     virtual ~WebBrowser();
+    Ui::WebBrowser* ui();
 
 protected:
     virtual void changeEvent(QEvent *e);

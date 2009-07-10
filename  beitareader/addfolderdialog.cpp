@@ -24,3 +24,8 @@ void AddFolderDialog::changeEvent(QEvent *e)
         break;
     }
 }
+
+Ui::AddFolderDialog* AddFolderDialog::ui()
+{
+    return this->m_ui;
+}

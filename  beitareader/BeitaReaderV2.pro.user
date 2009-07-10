@@ -59,7 +59,7 @@
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList" >
     <value type="QString" >CVS_RSH=ssh</value>
-    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-CV7YBMvVix,guid=6054280a178b1fa9e53673004a5540f7</value>
+    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-k7dZdX7ozu,guid=1370ebb9a83ea3347e8546004a56a2b2</value>
     <value type="QString" >DESKTOP_SESSION=default</value>
     <value type="QString" >DESKTOP_STARTUP_ID=</value>
     <value type="QString" >DISPLAY=:0.0</value>
@@ -67,50 +67,52 @@
     <value type="QString" >GDM_LANG=en_US.UTF-8</value>
     <value type="QString" >GDM_XSERVER_LOCATION=local</value>
     <value type="QString" >GNOME_DESKTOP_SESSION_ID=Default</value>
-    <value type="QString" >GNOME_KEYRING_PID=2651</value>
-    <value type="QString" >GNOME_KEYRING_SOCKET=/tmp/keyring-C5DA7K/socket</value>
+    <value type="QString" >GNOME_KEYRING_PID=2602</value>
+    <value type="QString" >GNOME_KEYRING_SOCKET=/tmp/keyring-d16w9T/socket</value>
+    <value type="QString" >GTK_IM_MODULE=scim-bridge</value>
     <value type="QString" >GTK_MODULES=gnomebreakpad</value>
-    <value type="QString" >GTK_RC_FILES=/etc/gtk/gtkrc:/home/huhao/.gtkrc-1.2-gnome2</value>
+    <value type="QString" >GTK_RC_FILES=/etc/gtk/gtkrc:/home/GuanQBY2008/.gtkrc-1.2-gnome2</value>
     <value type="QString" >G_BROKEN_FILENAMES=1</value>
     <value type="QString" >HISTSIZE=1000</value>
-    <value type="QString" >HOME=/home/huhao</value>
-    <value type="QString" >HOSTNAME=huhao</value>
+    <value type="QString" >HOME=/home/GuanQBY2008</value>
+    <value type="QString" >HOSTNAME=GuanQBY2008</value>
     <value type="QString" >INPUTRC=/etc/inputrc</value>
     <value type="QString" >LANG=en_US.UTF-8</value>
-    <value type="QString" >LD_LIBRARY_PATH=/home/huhao/qtsdk-2009.02/lib/qtcreator:</value>
+    <value type="QString" >LD_LIBRARY_PATH=/home/GuanQBY2008/qtsdk-2009.02/lib/qtcreator:</value>
     <value type="QString" >LESSOPEN=|/usr/bin/lesspipe.sh %s</value>
-    <value type="QString" >LOGNAME=huhao</value>
+    <value type="QString" >LOGNAME=GuanQBY2008</value>
     <value type="QString" >LS_COLORS=</value>
-    <value type="QString" >MAIL=/var/spool/mail/huhao</value>
-    <value type="QString" >MANPATH=/home/huhao/qtsdk-2009.02/qt/doc/man:</value>
-    <value type="QString" >PATH=/home/huhao/qtsdk-2009.02/qt/bin:/home/huhao/qtsdk-2009.02/qt/bin:/usr/kerberos/bin:/usr/lib/ccache:/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin:/home/huhao/bin</value>
-    <value type="QString" >PWD=/home/huhao/qtsdk-2009.02/bin</value>
-    <value type="QString" >QTDIR=/home/huhao/qtsdk-2009.02/qt</value>
-    <value type="QString" >SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/2652,unix/unix:/tmp/.ICE-unix/2652</value>
+    <value type="QString" >MAIL=/var/spool/mail/GuanQBY2008</value>
+    <value type="QString" >MANPATH=/home/GuanQBY2008/qtsdk-2009.02/qt/doc/man:</value>
+    <value type="QString" >PATH=/home/GuanQBY2008/qtsdk-2009.02/qt/bin:/home/GuanQBY2008/qtsdk-2009.02/qt/bin:/usr/kerberos/bin:/usr/lib/ccache:/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin:/home/GuanQBY2008/bin</value>
+    <value type="QString" >PWD=/home/GuanQBY2008/qtsdk-2009.02/bin</value>
+    <value type="QString" >QTDIR=/home/GuanQBY2008/qtsdk-2009.02/qt</value>
+    <value type="QString" >QT_IM_MODULE=xim</value>
+    <value type="QString" >SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/2603,unix/unix:/tmp/.ICE-unix/2603</value>
     <value type="QString" >SHELL=/bin/bash</value>
     <value type="QString" >SHLVL=1</value>
-    <value type="QString" >SSH_AGENT_PID=2752</value>
+    <value type="QString" >SSH_AGENT_PID=2680</value>
     <value type="QString" >SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass</value>
-    <value type="QString" >SSH_AUTH_SOCK=/tmp/ssh-nmsgdh2652/agent.2652</value>
+    <value type="QString" >SSH_AUTH_SOCK=/tmp/ssh-sThDKX2603/agent.2603</value>
     <value type="QString" >TERM=dumb</value>
-    <value type="QString" >USER=huhao</value>
-    <value type="QString" >USERNAME=huhao</value>
+    <value type="QString" >USER=GuanQBY2008</value>
+    <value type="QString" >USERNAME=GuanQBY2008</value>
     <value type="QString" >WINDOWPATH=7</value>
-    <value type="QString" >XAUTHORITY=/tmp/.gdmEWI2WU</value>
+    <value type="QString" >XAUTHORITY=/tmp/.gdmHB7LWU</value>
     <value type="QString" >XDG_DATA_DIRS=/usr/local/share/:/usr/share/:/usr/share/gdm/</value>
-    <value type="QString" >XDG_SESSION_COOKIE=ef30fd16a0060b4ec275dd004a548700-1247101174.650021-1146687754</value>
-    <value type="QString" >XMODIFIERS=@im=none</value>
+    <value type="QString" >XDG_SESSION_COOKIE=3e406a79e3a3960f8ec3ef004a4dfb00-1247191729.522150-1721091227</value>
+    <value type="QString" >XMODIFIERS=@im=SCIM</value>
    </valuelist>
    <valuelist key="abstractProcess.arguments" type="QVariantList" >
-    <value type="QString" >/home/huhao/qtprojects/beitarssproject/ beitarssproject/BeitaReaderV2.pro</value>
+    <value type="QString" >/home/GuanQBY2008/qtprojects/beitareader/ beitareader/BeitaReaderV2.pro</value>
     <value type="QString" >-spec</value>
     <value type="QString" >linux-g++</value>
     <value type="QString" >-r</value>
     <value type="QString" >CONFIG+=debug</value>
    </valuelist>
-   <value key="abstractProcess.command" type="QString" >/home/huhao/qtsdk-2009.02/qt/bin/qmake</value>
+   <value key="abstractProcess.command" type="QString" >/home/GuanQBY2008/qtsdk-2009.02/qt/bin/qmake</value>
    <value key="abstractProcess.enabled" type="bool" >false</value>
-   <value key="abstractProcess.workingDirectory" type="QString" >/home/huhao/qtprojects/beitarssproject/ beitarssproject</value>
+   <value key="abstractProcess.workingDirectory" type="QString" >/home/GuanQBY2008/qtprojects/beitareader/ beitareader</value>
    <value key="buildConfiguration" type="int" >2</value>
   </valuemap>
  </data>
@@ -120,7 +122,7 @@
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList" >
     <value type="QString" >CVS_RSH=ssh</value>
-    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-CV7YBMvVix,guid=6054280a178b1fa9e53673004a5540f7</value>
+    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-k7dZdX7ozu,guid=1370ebb9a83ea3347e8546004a56a2b2</value>
     <value type="QString" >DESKTOP_SESSION=default</value>
     <value type="QString" >DESKTOP_STARTUP_ID=</value>
     <value type="QString" >DISPLAY=:0.0</value>
@@ -128,46 +130,48 @@
     <value type="QString" >GDM_LANG=en_US.UTF-8</value>
     <value type="QString" >GDM_XSERVER_LOCATION=local</value>
     <value type="QString" >GNOME_DESKTOP_SESSION_ID=Default</value>
-    <value type="QString" >GNOME_KEYRING_PID=2651</value>
-    <value type="QString" >GNOME_KEYRING_SOCKET=/tmp/keyring-C5DA7K/socket</value>
+    <value type="QString" >GNOME_KEYRING_PID=2602</value>
+    <value type="QString" >GNOME_KEYRING_SOCKET=/tmp/keyring-d16w9T/socket</value>
+    <value type="QString" >GTK_IM_MODULE=scim-bridge</value>
     <value type="QString" >GTK_MODULES=gnomebreakpad</value>
-    <value type="QString" >GTK_RC_FILES=/etc/gtk/gtkrc:/home/huhao/.gtkrc-1.2-gnome2</value>
+    <value type="QString" >GTK_RC_FILES=/etc/gtk/gtkrc:/home/GuanQBY2008/.gtkrc-1.2-gnome2</value>
     <value type="QString" >G_BROKEN_FILENAMES=1</value>
     <value type="QString" >HISTSIZE=1000</value>
-    <value type="QString" >HOME=/home/huhao</value>
-    <value type="QString" >HOSTNAME=huhao</value>
+    <value type="QString" >HOME=/home/GuanQBY2008</value>
+    <value type="QString" >HOSTNAME=GuanQBY2008</value>
     <value type="QString" >INPUTRC=/etc/inputrc</value>
     <value type="QString" >LANG=en_US.UTF-8</value>
-    <value type="QString" >LD_LIBRARY_PATH=/home/huhao/qtsdk-2009.02/lib/qtcreator:</value>
+    <value type="QString" >LD_LIBRARY_PATH=/home/GuanQBY2008/qtsdk-2009.02/lib/qtcreator:</value>
     <value type="QString" >LESSOPEN=|/usr/bin/lesspipe.sh %s</value>
-    <value type="QString" >LOGNAME=huhao</value>
+    <value type="QString" >LOGNAME=GuanQBY2008</value>
     <value type="QString" >LS_COLORS=</value>
-    <value type="QString" >MAIL=/var/spool/mail/huhao</value>
-    <value type="QString" >MANPATH=/home/huhao/qtsdk-2009.02/qt/doc/man:</value>
-    <value type="QString" >PATH=/home/huhao/qtsdk-2009.02/qt/bin:/home/huhao/qtsdk-2009.02/qt/bin:/usr/kerberos/bin:/usr/lib/ccache:/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin:/home/huhao/bin</value>
-    <value type="QString" >PWD=/home/huhao/qtsdk-2009.02/bin</value>
-    <value type="QString" >QTDIR=/home/huhao/qtsdk-2009.02/qt</value>
-    <value type="QString" >SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/2652,unix/unix:/tmp/.ICE-unix/2652</value>
+    <value type="QString" >MAIL=/var/spool/mail/GuanQBY2008</value>
+    <value type="QString" >MANPATH=/home/GuanQBY2008/qtsdk-2009.02/qt/doc/man:</value>
+    <value type="QString" >PATH=/home/GuanQBY2008/qtsdk-2009.02/qt/bin:/home/GuanQBY2008/qtsdk-2009.02/qt/bin:/usr/kerberos/bin:/usr/lib/ccache:/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin:/home/GuanQBY2008/bin</value>
+    <value type="QString" >PWD=/home/GuanQBY2008/qtsdk-2009.02/bin</value>
+    <value type="QString" >QTDIR=/home/GuanQBY2008/qtsdk-2009.02/qt</value>
+    <value type="QString" >QT_IM_MODULE=xim</value>
+    <value type="QString" >SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/2603,unix/unix:/tmp/.ICE-unix/2603</value>
     <value type="QString" >SHELL=/bin/bash</value>
     <value type="QString" >SHLVL=1</value>
-    <value type="QString" >SSH_AGENT_PID=2752</value>
+    <value type="QString" >SSH_AGENT_PID=2680</value>
     <value type="QString" >SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass</value>
-    <value type="QString" >SSH_AUTH_SOCK=/tmp/ssh-nmsgdh2652/agent.2652</value>
+    <value type="QString" >SSH_AUTH_SOCK=/tmp/ssh-sThDKX2603/agent.2603</value>
     <value type="QString" >TERM=dumb</value>
-    <value type="QString" >USER=huhao</value>
-    <value type="QString" >USERNAME=huhao</value>
+    <value type="QString" >USER=GuanQBY2008</value>
+    <value type="QString" >USERNAME=GuanQBY2008</value>
     <value type="QString" >WINDOWPATH=7</value>
-    <value type="QString" >XAUTHORITY=/tmp/.gdmEWI2WU</value>
+    <value type="QString" >XAUTHORITY=/tmp/.gdmHB7LWU</value>
     <value type="QString" >XDG_DATA_DIRS=/usr/local/share/:/usr/share/:/usr/share/gdm/</value>
-    <value type="QString" >XDG_SESSION_COOKIE=ef30fd16a0060b4ec275dd004a548700-1247101174.650021-1146687754</value>
-    <value type="QString" >XMODIFIERS=@im=none</value>
+    <value type="QString" >XDG_SESSION_COOKIE=3e406a79e3a3960f8ec3ef004a4dfb00-1247191729.522150-1721091227</value>
+    <value type="QString" >XMODIFIERS=@im=SCIM</value>
    </valuelist>
    <valuelist key="abstractProcess.arguments" type="QVariantList" >
     <value type="QString" >-w</value>
    </valuelist>
    <value key="abstractProcess.command" type="QString" >/usr/bin/make</value>
    <value key="abstractProcess.enabled" type="bool" >true</value>
-   <value key="abstractProcess.workingDirectory" type="QString" >/home/huhao/qtprojects/beitarssproject/ beitarssproject</value>
+   <value key="abstractProcess.workingDirectory" type="QString" >/home/GuanQBY2008/qtprojects/beitareader/ beitareader</value>
   </valuemap>
  </data>
  <data>
@@ -175,40 +179,50 @@
   <valuemap type="QVariantMap" >
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList" >
-    <value type="QString" >CLASSPATH=~/Development/jdk1.6.0_12/lib</value>
-    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-2lYkvUEfi9,guid=5987894530032f36b8ac8f544a55afee</value>
-    <value type="QString" >DESKTOP_SESSION=gnome</value>
+    <value type="QString" >CVS_RSH=ssh</value>
+    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-k7dZdX7ozu,guid=1370ebb9a83ea3347e8546004a56a2b2</value>
+    <value type="QString" >DESKTOP_SESSION=default</value>
     <value type="QString" >DESKTOP_STARTUP_ID=</value>
     <value type="QString" >DISPLAY=:0.0</value>
-    <value type="QString" >GDMSESSION=gnome</value>
+    <value type="QString" >GDMSESSION=default</value>
     <value type="QString" >GDM_LANG=en_US.UTF-8</value>
     <value type="QString" >GDM_XSERVER_LOCATION=local</value>
     <value type="QString" >GNOME_DESKTOP_SESSION_ID=Default</value>
-    <value type="QString" >GNOME_KEYRING_PID=6070</value>
-    <value type="QString" >GNOME_KEYRING_SOCKET=/tmp/keyring-mxk54H/socket</value>
-    <value type="QString" >GPG_AGENT_INFO=/tmp/seahorse-CWpfc6/S.gpg-agent:6131:1</value>
-    <value type="QString" >GTK_IM_MODULE=ibus</value>
-    <value type="QString" >GTK_RC_FILES=/etc/gtk/gtkrc:/home/chzhcn/.gtkrc-1.2-gnome2</value>
-    <value type="QString" >HOME=/home/chzhcn</value>
-    <value type="QString" >JAVA_HOME=~/Development/jdk1.6.0_12</value>
+    <value type="QString" >GNOME_KEYRING_PID=2602</value>
+    <value type="QString" >GNOME_KEYRING_SOCKET=/tmp/keyring-d16w9T/socket</value>
+    <value type="QString" >GTK_IM_MODULE=scim-bridge</value>
+    <value type="QString" >GTK_MODULES=gnomebreakpad</value>
+    <value type="QString" >GTK_RC_FILES=/etc/gtk/gtkrc:/home/GuanQBY2008/.gtkrc-1.2-gnome2</value>
+    <value type="QString" >G_BROKEN_FILENAMES=1</value>
+    <value type="QString" >HISTSIZE=1000</value>
+    <value type="QString" >HOME=/home/GuanQBY2008</value>
+    <value type="QString" >HOSTNAME=GuanQBY2008</value>
+    <value type="QString" >INPUTRC=/etc/inputrc</value>
     <value type="QString" >LANG=en_US.UTF-8</value>
-    <value type="QString" >LD_LIBRARY_PATH=/home/chzhcn/Development/qtsdk-2009.02/lib/qtcreator:~/Development/qtsdk-2009.02/qt/lib:</value>
-    <value type="QString" >LOGNAME=chzhcn</value>
-    <value type="QString" >PATH=/home/chzhcn/Development/qtsdk-2009.02/qt/bin:~/Development/qtsdk-2009.02/qt/bin:~/Development/jdk1.6.0_12/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
-    <value type="QString" >PWD=/home/chzhcn/Development/qtsdk-2009.02/bin</value>
-    <value type="QString" >QTDIR=/home/chzhcn/Development/qtsdk-2009.02/qt</value>
-    <value type="QString" >QT_HOME=~/Development/qtsdk-2009.02</value>
-    <value type="QString" >QT_IM_MODULE=ibus</value>
-    <value type="QString" >SESSION_MANAGER=local/chzhcn-laptop:/tmp/.ICE-unix/6071</value>
+    <value type="QString" >LD_LIBRARY_PATH=/home/GuanQBY2008/qtsdk-2009.02/lib/qtcreator:</value>
+    <value type="QString" >LESSOPEN=|/usr/bin/lesspipe.sh %s</value>
+    <value type="QString" >LOGNAME=GuanQBY2008</value>
+    <value type="QString" >LS_COLORS=</value>
+    <value type="QString" >MAIL=/var/spool/mail/GuanQBY2008</value>
+    <value type="QString" >MANPATH=/home/GuanQBY2008/qtsdk-2009.02/qt/doc/man:</value>
+    <value type="QString" >PATH=/home/GuanQBY2008/qtsdk-2009.02/qt/bin:/home/GuanQBY2008/qtsdk-2009.02/qt/bin:/usr/kerberos/bin:/usr/lib/ccache:/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin:/home/GuanQBY2008/bin</value>
+    <value type="QString" >PWD=/home/GuanQBY2008/qtsdk-2009.02/bin</value>
+    <value type="QString" >QTDIR=/home/GuanQBY2008/qtsdk-2009.02/qt</value>
+    <value type="QString" >QT_IM_MODULE=xim</value>
+    <value type="QString" >SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/2603,unix/unix:/tmp/.ICE-unix/2603</value>
     <value type="QString" >SHELL=/bin/bash</value>
-    <value type="QString" >SSH_AUTH_SOCK=/tmp/keyring-mxk54H/ssh</value>
-    <value type="QString" >USER=chzhcn</value>
-    <value type="QString" >USERNAME=chzhcn</value>
+    <value type="QString" >SHLVL=1</value>
+    <value type="QString" >SSH_AGENT_PID=2680</value>
+    <value type="QString" >SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass</value>
+    <value type="QString" >SSH_AUTH_SOCK=/tmp/ssh-sThDKX2603/agent.2603</value>
+    <value type="QString" >TERM=dumb</value>
+    <value type="QString" >USER=GuanQBY2008</value>
+    <value type="QString" >USERNAME=GuanQBY2008</value>
     <value type="QString" >WINDOWPATH=7</value>
-    <value type="QString" >XAUTHORITY=/home/chzhcn/.Xauthority</value>
+    <value type="QString" >XAUTHORITY=/tmp/.gdmHB7LWU</value>
     <value type="QString" >XDG_DATA_DIRS=/usr/local/share/:/usr/share/:/usr/share/gdm/</value>
-    <value type="QString" >XDG_SESSION_COOKIE=66db1b9c19b14e961a84eec249a6b50d-1247129580.594061-185365034</value>
-    <value type="QString" >XMODIFIERS=@im=ibus</value>
+    <value type="QString" >XDG_SESSION_COOKIE=3e406a79e3a3960f8ec3ef004a4dfb00-1247191729.522150-1721091227</value>
+    <value type="QString" >XMODIFIERS=@im=SCIM</value>
    </valuelist>
    <valuelist key="abstractProcess.arguments" type="QVariantList" >
     <value type="QString" >clean</value>
@@ -216,7 +230,7 @@
    </valuelist>
    <value key="abstractProcess.command" type="QString" >/usr/bin/make</value>
    <value key="abstractProcess.enabled" type="bool" >true</value>
-   <value key="abstractProcess.workingDirectory" type="QString" >/home/chzhcn/workspace/ beitarssproject</value>
+   <value key="abstractProcess.workingDirectory" type="QString" >/home/GuanQBY2008/qtprojects/beitareader/ beitareader</value>
   </valuemap>
  </data>
  <data>

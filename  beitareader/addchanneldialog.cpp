@@ -24,3 +24,8 @@ void AddChannelDialog::changeEvent(QEvent *e)
         break;
     }
 }
+
+Ui::AddChannelDialog* AddChannelDialog::ui()
+{
+    return this->m_ui;
+}

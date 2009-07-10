@@ -2,6 +2,7 @@
 #define ADDFOLDERDIALOG_H
 
 #include <QtGui/QDialog>
+#include "ui_addfolderdialog.h"
 
 namespace Ui {
     class AddFolderDialog;
@@ -13,6 +14,7 @@ class AddFolderDialog : public QDialog {
 public:
     explicit AddFolderDialog(QWidget *parent = 0);
     virtual ~AddFolderDialog();
+    Ui::AddFolderDialog* ui();
 
 protected:
     virtual void changeEvent(QEvent *e);

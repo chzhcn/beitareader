@@ -2,6 +2,7 @@
 #define ADDCHANNELDIALOG_H
 
 #include <QtGui/QDialog>
+#include "ui_addchanneldialog.h"
 
 namespace Ui {
     class AddChannelDialog;
@@ -13,6 +14,7 @@ class AddChannelDialog : public QDialog {
 public:
     explicit AddChannelDialog(QWidget *parent = 0);
     virtual ~AddChannelDialog();
+    Ui::AddChannelDialog* ui();
 
 protected:
     virtual void changeEvent(QEvent *e);

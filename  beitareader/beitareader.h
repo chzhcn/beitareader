@@ -3,6 +3,7 @@
 #include "mytree.h"
 
 #include <QtGui/QMainWindow>
+#include "ui_beitareader.h"
 //#include "menuandtoolbarcontroller.h"
 
 //#include "mysplitter.h"

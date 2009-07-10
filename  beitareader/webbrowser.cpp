@@ -24,3 +24,8 @@ void WebBrowser::changeEvent(QEvent *e)
         break;
     }
 }
+
+Ui::WebBrowser* WebBrowser::ui()
+{
+    return this->m_ui;
+}
