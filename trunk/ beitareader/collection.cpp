@@ -54,3 +54,12 @@ void Collection::deleteCollection(Collection& collection)
     query.bindValue(":userid",collection.userid);
     query.exec();
 }
+
+//通过ID删除Collection
+void Collection::deleteCollectionByID(int newCollectionID)
+{
+    QSqlQuery query;
+    query.prepare("delete from Collection where id = :id");
+    query.bindValue(":id", newCollectionID);
+    query.exec();
+}

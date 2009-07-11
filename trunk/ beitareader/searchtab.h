@@ -2,7 +2,11 @@
 #define SEARCHTAB_H
 
 #include <QtGui/QWidget>
-
+#include "item.h"
+#include <QComboBox>
+#include <QVector>
+#include <QDateEdit>
+#include <QRadioButton>
 namespace Ui {
     class SearchTab;
 }
@@ -17,9 +21,13 @@ public:
 
 protected:
     virtual void changeEvent(QEvent *e);
-
+signals:
+        void searchResultItems(QVector<Item*>);
+public slots:
+    void handleSearchButtonClicked();
 private:
     Ui::SearchTab *m_ui;
+    QVector<Item*> getTheItems(QVector<Item*>);
 };
 
 #endif // SEARCHTAB_H

@@ -34,7 +34,7 @@ void Item::insertItem(Item& item)
             first = false;
         }
         count++;
-        if(count == 50)
+        if(count == 30)
         {
             bigID = query.value(0).toInt();
         }
@@ -88,7 +88,7 @@ void Item::updateItem(Item& item)
     query.exec();
 }
 //从数据库中选取未读的Item
-QVector<Item> Item::selectNotRead()
+QVector<Item*> Item::selectNotRead()
 {
     QSqlQuery query;
     query.prepare("select * from Item where isread = :isread");
@@ -98,7 +98,7 @@ QVector<Item> Item::selectNotRead()
 }
 
 //从数据库中选取已读的Item
-QVector<Item> Item::selectIsRead()
+QVector<Item*> Item::selectIsRead()
 {
     QSqlQuery query;
     query.prepare("select * from Item where isread = :isread");
@@ -108,7 +108,7 @@ QVector<Item> Item::selectIsRead()
 }
 
 //通过作者关键字进行搜索，返回Item对象集合
-QVector<Item> Item::searchByAuthor(QString& searchString)
+QVector<Item*> Item::searchByAuthor(QString searchString)
 {
     QSqlQuery query;
     query.exec("select * from Item where author like '%"+searchString+"%'");
@@ -116,7 +116,7 @@ QVector<Item> Item::searchByAuthor(QString& searchString)
 }
 
 //通过文章标题关键字进行搜索，返回Item对象集合
-QVector<Item> Item::searchByTitle(QString& searchString)
+QVector<Item*> Item::searchByTitle(QString searchString)
 {
     QSqlQuery query;
     query.exec("select * from Item where title like '%"+searchString+"%'");
@@ -124,7 +124,7 @@ QVector<Item> Item::searchByTitle(QString& searchString)
 }
 
 //通过摘要关键字进行搜索，返回Item对象集合
-QVector<Item> Item::searchByDescription(QString& searchString)
+QVector<Item*> Item::searchByDescription(QString searchString)
 {
     QSqlQuery query;
     query.exec("select * from Item where description like '%"+searchString+"%'");
@@ -132,7 +132,7 @@ QVector<Item> Item::searchByDescription(QString& searchString)
 }
 
 //通过地址链接关键字进行搜索，返回Item对象集合
-QVector<Item> Item::searchByLink(QString& searchString)
+QVector<Item*> Item::searchByLink(QString searchString)
 {
     QSqlQuery query;
     query.exec("select * from Item where link like '%"+searchString+"%'");
@@ -140,14 +140,14 @@ QVector<Item> Item::searchByLink(QString& searchString)
 }
 
 //通过日期进行搜索，返回Item对象集合
-QVector<Item> Item::searchByPubdate(QDate& date1, QDate& date2)
+QVector<Item*> Item::searchByPubdate(QDate date1, QDate date2)
 {
     QSqlQuery query;
-    QVector<Item> v;
+    QVector<Item*> v;
     query.exec("select * from Item");
     while(query.next())
     {
-        Item item(query.value(1).toString(),query.value(2).toString(),query.value(3).toString(),
+        Item *item = new Item(query.value(1).toString(),query.value(2).toString(),query.value(3).toString(),
                  query.value(4).toString(),query.value(5).toDate(),query.value(6).toInt(),
                  query.value(7).toInt());
         if(query.value(5).toDate() >date1 && query.value(5).toDate() < date2)
@@ -157,20 +157,39 @@ QVector<Item> Item::searchByPubdate(QDate& date1, QDate& date2)
 }
 
 //获得特定的Item集合
-QVector<Item> Item::vectorOfItem(QSqlQuery& query)
+QVector<Item*> Item::vectorOfItem(QSqlQuery& query)
 {
-    QVector<Item> v;
+    QVector<Item*> v;
     while(query.next())
     {
-        v.append(Item(query.value(1).toString(),query.value(2).toString(),query.value(3).toString(),
+        v.append(new Item(query.value(1).toString(),query.value(2).toString(),query.value(3).toString(),
                      query.value(4).toString(),query.value(5).toDate(),query.value(6).toInt(),
                      query.value(7).toInt()));
     }
     return v;
 }
 
-//通过channelid获取所有的item
-QVector<Item> Item::getItemsByChannelID(int newChannelID)
+//通过channelid获取所有的item,并按时间降序
+QVector<Item*> Item::getItemsByChannelIDDescByDate(int newChannelID)
+{
+    QSqlQuery query;
+    query.prepare("select * from Item where channelid = :channelid order by pubdate desc");
+    query.bindValue(":channelid", newChannelID);
+    query.exec();
+    return vectorOfItem(query);
+}
+
+
+QVector<Item*> Item::getItemsByChannelIDAscByDate(int newChannelID)
+{
+    QSqlQuery query;
+    query.prepare("select * from Item where channelid = :channelid order by pubdate asc");
+    query.bindValue(":channelid", newChannelID);
+    query.exec();
+    return vectorOfItem(query);
+}
+
+QVector<Item*> Item::getItemsByChannelID(int newChannelID)
 {
     QSqlQuery query;
     query.prepare("select * from Item where channelid = :channelid");

@@ -17,15 +17,19 @@ public:
     /*静态方法*/
     static void insertItem(Item& );
     static void deleteItem(Item& );
-    static QVector<Item> selectNotRead();
-    static QVector<Item> selectIsRead();
-    static QVector<Item> searchByAuthor(QString& );
-    static QVector<Item> searchByTitle(QString& );
-    static QVector<Item> searchByDescription(QString& );
-    static QVector<Item> searchByLink(QString& );
-    static QVector<Item> searchByPubdate(QDate& date1, QDate& date2);
-    static QVector<Item> getItemsByChannelID(int newChannelID);
+    static QVector<Item*> selectNotRead();
+    static QVector<Item*> selectIsRead();
+    static QVector<Item*> searchByAuthor(QString );
+    static QVector<Item*> searchByTitle(QString );
+    static QVector<Item*> searchByDescription(QString );
+    static QVector<Item*> searchByLink(QString );
+    static QVector<Item*> searchByPubdate(QDate date1, QDate date2);
+    static QVector<Item*> getItemsByChannelIDDescByDate(int newChannelID);
+    static QVector<Item*> getItemsByChannelIDAscByDate(int newChannelID);
+    static QVector<Item*> getItemsByChannelID(int newChannelID);
+
     //属性的set与get方法
+    int getID(){return id;}
     void setTitle(QString& newTitle){title = newTitle;updateItem(*this);}
     QString getTitle(){return title;}
     void setLink(QString& newLink){link = newLink;updateItem(*this);}
@@ -50,7 +54,7 @@ private:
     QDate pubdate;
     int isread;
     int  channelid;
-    static QVector<Item> vectorOfItem(QSqlQuery&);
+    static QVector<Item*> vectorOfItem(QSqlQuery&);
     static void updateItem(Item& );
 };
 

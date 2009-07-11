@@ -6,14 +6,17 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>302</width>
-    <height>155</height>
+    <width>537</width>
+    <height>395</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <layout class="QFormLayout" name="formLayout">
+   <property name="fieldGrowthPolicy">
+    <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+   </property>
    <item row="0" column="0">
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
@@ -60,16 +63,16 @@
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="readCheckBox_3">
+        <widget class="QRadioButton" name="radioButton">
          <property name="text">
           <string>&amp;Read</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="unreadCheckBox_3">
+        <widget class="QRadioButton" name="radioButton_2">
          <property name="text">
-          <string>&amp;Unread</string>
+          <string>&amp;NotRead</string>
          </property>
         </widget>
        </item>
