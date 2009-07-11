@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'searchtab.ui'
 **
-** Created: Fri Jul 10 13:58:48 2009
+** Created: Sat Jul 11 09:51:14 2009
 **      by: Qt User Interface Compiler version 4.5.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -14,7 +14,6 @@
 #include <QtGui/QAction>
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
-#include <QtGui/QCheckBox>
 #include <QtGui/QComboBox>
 #include <QtGui/QDateEdit>
 #include <QtGui/QFormLayout>
@@ -23,6 +22,7 @@
 #include <QtGui/QLabel>
 #include <QtGui/QLineEdit>
 #include <QtGui/QPushButton>
+#include <QtGui/QRadioButton>
 #include <QtGui/QSpacerItem>
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QWidget>
@@ -39,8 +39,8 @@ public:
     QLineEdit *searchLineEdit_3;
     QHBoxLayout *horizontalLayout_16;
     QComboBox *categoryComboBox_3;
-    QCheckBox *readCheckBox_3;
-    QCheckBox *unreadCheckBox_3;
+    QRadioButton *radioButton;
+    QRadioButton *radioButton_2;
     QHBoxLayout *horizontalLayout_17;
     QHBoxLayout *horizontalLayout_18;
     QLabel *label_3;
@@ -56,9 +56,10 @@ public:
     {
         if (SearchTab->objectName().isEmpty())
             SearchTab->setObjectName(QString::fromUtf8("SearchTab"));
-        SearchTab->resize(302, 155);
+        SearchTab->resize(537, 395);
         formLayout = new QFormLayout(SearchTab);
         formLayout->setObjectName(QString::fromUtf8("formLayout"));
+        formLayout->setFieldGrowthPolicy(QFormLayout::AllNonFixedFieldsGrow);
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         horizontalLayout_15 = new QHBoxLayout();
@@ -83,15 +84,15 @@ public:
 
         horizontalLayout_16->addWidget(categoryComboBox_3);
 
-        readCheckBox_3 = new QCheckBox(SearchTab);
-        readCheckBox_3->setObjectName(QString::fromUtf8("readCheckBox_3"));
+        radioButton = new QRadioButton(SearchTab);
+        radioButton->setObjectName(QString::fromUtf8("radioButton"));
 
-        horizontalLayout_16->addWidget(readCheckBox_3);
+        horizontalLayout_16->addWidget(radioButton);
 
-        unreadCheckBox_3 = new QCheckBox(SearchTab);
-        unreadCheckBox_3->setObjectName(QString::fromUtf8("unreadCheckBox_3"));
+        radioButton_2 = new QRadioButton(SearchTab);
+        radioButton_2->setObjectName(QString::fromUtf8("radioButton_2"));
 
-        horizontalLayout_16->addWidget(unreadCheckBox_3);
+        horizontalLayout_16->addWidget(radioButton_2);
 
 
         verticalLayout->addLayout(horizontalLayout_16);
@@ -168,8 +169,8 @@ public:
          << QApplication::translate("SearchTab", "Author", 0, QApplication::UnicodeUTF8)
          << QApplication::translate("SearchTab", "Web Address", 0, QApplication::UnicodeUTF8)
         );
-        readCheckBox_3->setText(QApplication::translate("SearchTab", "&Read", 0, QApplication::UnicodeUTF8));
-        unreadCheckBox_3->setText(QApplication::translate("SearchTab", "&Unread", 0, QApplication::UnicodeUTF8));
+        radioButton->setText(QApplication::translate("SearchTab", "&Read", 0, QApplication::UnicodeUTF8));
+        radioButton_2->setText(QApplication::translate("SearchTab", "&NotRead", 0, QApplication::UnicodeUTF8));
         label_3->setText(QApplication::translate("SearchTab", "From:", 0, QApplication::UnicodeUTF8));
         toLabel_3->setText(QApplication::translate("SearchTab", "To:", 0, QApplication::UnicodeUTF8));
         searchButton_3->setText(QApplication::translate("SearchTab", "&Search", 0, QApplication::UnicodeUTF8));

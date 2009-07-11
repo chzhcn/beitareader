@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'searchtab.h'
 **
-** Created: Fri Jul 10 14:02:37 2009
+** Created: Sat Jul 11 13:54:45 2009
 **      by: The Qt Meta Object Compiler version 61 (Qt 4.5.1)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,16 +23,23 @@ static const uint qt_meta_data_SearchTab[] = {
        2,       // revision
        0,       // classname
        0,    0, // classinfo
-       0,    0, // methods
+       2,   12, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
+
+ // signals: signature, parameters, type, tag, flags
+      11,   10,   10,   10, 0x05,
+
+ // slots: signature, parameters, type, tag, flags
+      45,   10,   10,   10, 0x0a,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_SearchTab[] = {
-    "SearchTab\0"
+    "SearchTab\0\0searchResultItems(QVector<Item*>)\0"
+    "handleSearchButtonClicked()\0"
 };
 
 const QMetaObject SearchTab::staticMetaObject = {
@@ -58,6 +65,21 @@ int SearchTab::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     _id = QWidget::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        switch (_id) {
+        case 0: searchResultItems((*reinterpret_cast< QVector<Item*>(*)>(_a[1]))); break;
+        case 1: handleSearchButtonClicked(); break;
+        default: ;
+        }
+        _id -= 2;
+    }
     return _id;
+}
+
+// SIGNAL 0
+void SearchTab::searchResultItems(QVector<Item*> _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 QT_END_MOC_NAMESPACE

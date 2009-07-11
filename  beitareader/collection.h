@@ -21,6 +21,7 @@ public:
 
     static void insertCollection(Collection& collection);
     static void deleteCollection(Collection& collection);
+    static void deleteCollectionByID(int newCollectionID);
 private:
     int id;
     QString name;

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'beitareader.ui'
 **
-** Created: Fri Jul 10 13:58:48 2009
+** Created: Sat Jul 11 13:54:37 2009
 **      by: Qt User Interface Compiler version 4.5.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -135,7 +135,7 @@ public:
         BeitaReader->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(BeitaReader);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1600, 23));
+        menuBar->setGeometry(QRect(0, 0, 1600, 30));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
         menuView = new QMenu(menuBar);
@@ -184,7 +184,7 @@ public:
 
         retranslateUi(BeitaReader);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(BeitaReader);

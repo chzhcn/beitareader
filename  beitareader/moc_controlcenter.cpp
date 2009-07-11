@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'controlcenter.h'
 **
-** Created: Fri Jul 10 15:27:37 2009
+** Created: Sat Jul 11 13:54:48 2009
 **      by: The Qt Meta Object Compiler version 61 (Qt 4.5.1)
 **
 ** WARNING! All changes made in this file will be lost!
