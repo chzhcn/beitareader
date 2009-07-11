@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Login</string>
   </property>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
@@ -28,7 +28,10 @@
       <item row="0" column="0">
        <widget class="QLabel" name="label">
         <property name="text">
-         <string>AccountName</string>
+         <string>&amp;Account</string>
+        </property>
+        <property name="buddy">
+         <cstring>namelineEdit</cstring>
         </property>
        </widget>
       </item>
@@ -38,7 +41,10 @@
       <item row="1" column="0">
        <widget class="QLabel" name="label_2">
         <property name="text">
-         <string>Password</string>
+         <string>&amp;Password</string>
+        </property>
+        <property name="buddy">
+         <cstring>passwordlineEdit</cstring>
         </property>
        </widget>
       </item>
@@ -52,21 +58,21 @@
       <item>
        <widget class="QPushButton" name="registerButton">
         <property name="text">
-         <string>Register</string>
+         <string>&amp;Register</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="cancelButton">
         <property name="text">
-         <string>Cancel</string>
+         <string>&amp;Cancel</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="loginButton">
         <property name="text">
-         <string>Login</string>
+         <string>&amp;Login</string>
         </property>
        </widget>
       </item>
@@ -98,6 +104,14 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>namelineEdit</tabstop>
+  <tabstop>passwordlineEdit</tabstop>
+  <tabstop>loginButton</tabstop>
+  <tabstop>registerButton</tabstop>
+  <tabstop>cancelButton</tabstop>
+  <tabstop>graphicsView</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

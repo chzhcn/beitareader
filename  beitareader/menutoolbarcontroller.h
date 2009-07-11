@@ -5,6 +5,9 @@
 #include "beitareader.h"
 #include "controlcenter.h"
 #include "addchanneldialog.h"
+#include "addfolderdialog.h"
+#include "user.h"
+#include "settingsdialog.h"
 
 class MenuToolBarController : public QObject
 {
@@ -12,10 +15,11 @@ class MenuToolBarController : public QObject
 
 public:
     MenuToolBarController();
-    MenuToolBarController(BeitaReader*);
+    MenuToolBarController(BeitaReader*,User*);
 
 private:
     BeitaReader *main;
+    User *user;
     void bindSignalAndSlot();
 
 public slots:
@@ -27,6 +31,8 @@ public slots:
     void showToolBar(bool);
     void showStatusBar(bool);
     void settingsDialog();
+    void setUserInfo(QString psw, int autoRefresh, int startRefresh, int readFilter, int showAbs
+                   , int refreshTime, int autoMark);
 };
 
 #endif // MENUTOOLBARCONTROLLER_H

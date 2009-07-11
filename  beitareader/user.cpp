@@ -1,15 +1,20 @@
 #include "user.h"
-User::User(QString newName,QString newPassword,int newFavchannelid,
-           int newAveragereadtime,int newReaddays,int newShowabs,int newRefreshtime)
+User::User(QString newName,QString newPassword,int newAutoRefresh,
+           int newStartRefresh,int newReadFilter,int newShowabs,
+           int newRefreshtime,int newAutoMark, int newSaveNumber, QDateTime newLastRefresh)
 {
     name = newName;
     password = newPassword;
-    favchannelid = newFavchannelid;
-    averagereadtime = newAveragereadtime;
-    readdays = newReaddays;
+    autorefresh = newAutoRefresh;
+    startrefresh = newStartRefresh;
+    readfilter = newReadFilter;
     showabs = newShowabs;
     refreshtime = newRefreshtime;
+    automark = newAutoMark;
+    savenumber = newSaveNumber;
+    lastrefresh = newLastRefresh;
 }
+
 User::User()
 {
 }
@@ -18,16 +23,20 @@ User::User()
 void User::updateUser(User& user)
 {
     QSqlQuery query;
-    query.prepare("update User set name=:name,password=:password,favchannelid=:favchannelid,"
-                  "averagereadtime=:averagereadtime,readdays=:readdays,"
-                  "showabs=:showabs,refreshtime=:refreshtime where id=:id");
+    query.prepare("update User set name=:name,password=:password,autorefresh=:autorefresh,"
+                  "startrefresh=:startrefresh,readfilter=:readfilter,savenumber=:savenumber"
+                  "showabs=:showabs,refreshtime=:refreshtime,automark=:automark,lastrefresh=:lastrefresh"
+                  "where id=:id");
     query.bindValue(":name",user.name);
     query.bindValue(":password",user.password);
-    query.bindValue(":favchannelid",user.favchannelid);
-    query.bindValue(":averagereadtime",user.averagereadtime);
-    query.bindValue(":readdays",user.readdays);
+    query.bindValue(":autorefresh",user.autorefresh);
+    query.bindValue(":startrefresh",user.startrefresh);
+    query.bindValue(":savenumber",user.savenumber);
+    query.bindValue(":readfilter",user.readfilter);
     query.bindValue(":showabs",user.showabs);
     query.bindValue(":refreshtime",user.refreshtime);
+    query.bindValue(":automark",user.automark);
+    query.bindValue(":lastrefresh",user.lastrefresh);
     query.bindValue(":id",user.id);
     query.exec();
 }
@@ -44,7 +53,8 @@ User User::getUserByName(QString newName)
     {
         User u(query.value(1).toString(),query.value(2).toString(),query.value(3).toInt(),
                   query.value(4).toInt(),query.value(5).toInt(),query.value(6).toInt(),
-                  query.value(7).toInt());
+                  query.value(7).toInt(),query.value(8).toInt(),query.value(9).toInt(),
+                  query.value(10).toDateTime());
         user = u;
         user.id = query.value(0).toInt();
     }
@@ -52,7 +62,7 @@ User User::getUserByName(QString newName)
 }
 
 //创建用户
-void User::createUser(QString newName,QString newPassword)
+bool User::createUser(QString newName,QString newPassword)
 {
     QSqlQuery query;
     query.prepare("select * from User where name = :name");
@@ -62,22 +72,29 @@ void User::createUser(QString newName,QString newPassword)
     {
         if(query.value(1).toString() == newName)
         {
-            QMessageBox::about(0,"Error!",QString::fromLocal8Bit("用户名已经存在！"));
-            return;
+            QMessageBox::about(0,"Warning!",QString::fromLocal8Bit("用户名已经存在！"));
+            return false;
         }
     }
-    query.prepare("insert into User(name,password,favchannelid,averagereadtime,readdays,showabs,refreshtime) "
-                  "values (:name,:password,:favchannelid,"
-                  ":averagereadtime,:readdays,:showabs,:refreshtime)");
+
+    query.prepare("insert into User (name,password,autorefresh,"
+              "startrefresh,readfilter,showabs,refreshtime,automark,savenumber,lastrefresh)"
+              "values (:name,:password,:autorefresh,"
+              ":startrefresh,:readfilter,:showabs,:refreshtime,:automark,:savenumber,:lastrefresh)");
+
     query.bindValue(":name",newName);
     query.bindValue(":password",newPassword);
-    query.bindValue(":favchannelid",0);
-    query.bindValue(":averagereadtime",0);
-    query.bindValue(":readdays",0);
-    query.bindValue(":showabs",0);
-    query.bindValue(":refreshtime",300000);
-
+    query.bindValue(":autorefresh",1);
+    query.bindValue(":startrefresh",0);
+    query.bindValue(":readfilter",0);
+    query.bindValue(":showabs",1);
+    query.bindValue(":refreshtime",15);
+    query.bindValue(":automark",0);
+    query.bindValue(":savenumber",100);
+    query.bindValue(":lastrefresh",QDateTime::currentDateTime());
     query.exec();
+
+    return true;
 }
 
 void User::deleteUserByName(QString newName)
@@ -114,10 +131,51 @@ int User::getUserIDByName(QString newName)
     return user.id;
 }
 
-//To be implement
-//if right return its id;
-//if wrong return 0;
 int User::checkPassword(QString name,QString password)
 {
-    return 1;
+    QSqlQuery query;
+    query.prepare("select * from User where name = :name and password = :password");
+    query.bindValue(":name",name);
+    query.bindValue(":password",password);
+    query.exec();
+
+    if(query.next())
+    {
+        return query.value(0).toInt();
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+User User::getUserById(int id)
+{
+    QString idString;
+    idString.setNum(id,10);
+
+    QSqlQuery query;
+    query.prepare("select * from User where id = :id");
+    query.bindValue(":id",idString);
+    query.exec();
+    User user;
+    if(query.next())
+    {
+        User u(query.value(1).toString(),query.value(2).toString(),query.value(3).toInt(),
+                  query.value(4).toInt(),query.value(5).toInt(),query.value(6).toInt(),
+                  query.value(7).toInt(),query.value(8).toInt(),query.value(9).toInt(),
+                  query.value(10).toDateTime());
+        user = u;
+        user.id = query.value(0).toInt();
+    }
+    return user;
+}
+
+void User::updateAllChannelSaveNumbersByUserID(int id, int saveNumber)
+{
+    QSqlQuery query;
+    query.prepare("update Channel set savenum=:savenum where userid = :id");
+    query.bindValue(":savenum",saveNumber);
+    query.bindValue(":id",id);
+    query.exec();
 }

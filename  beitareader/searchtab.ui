@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>537</width>
-    <height>395</height>
+    <width>302</width>
+    <height>152</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -90,7 +90,11 @@
           </widget>
          </item>
          <item>
-          <widget class="QDateEdit" name="fromDateEdit_3"/>
+          <widget class="QDateEdit" name="fromDateEdit_3">
+           <property name="calendarPopup">
+            <bool>true</bool>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -104,7 +108,11 @@
           </widget>
          </item>
          <item>
-          <widget class="QDateEdit" name="toDateEdit_3"/>
+          <widget class="QDateEdit" name="toDateEdit_3">
+           <property name="calendarPopup">
+            <bool>true</bool>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -138,6 +146,15 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>searchLineEdit_3</tabstop>
+  <tabstop>categoryComboBox_3</tabstop>
+  <tabstop>radioButton</tabstop>
+  <tabstop>radioButton_2</tabstop>
+  <tabstop>fromDateEdit_3</tabstop>
+  <tabstop>toDateEdit_3</tabstop>
+  <tabstop>searchButton_3</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

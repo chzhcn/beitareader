@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'loginwidget.ui'
 **
-** Created: Fri Jul 10 13:58:48 2009
+** Created: Sat Jul 11 15:43:06 2009
 **      by: Qt User Interface Compiler version 4.5.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -105,6 +105,15 @@ public:
         label_3 = new QLabel(LoginWidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(130, 260, 221, 20));
+#ifndef QT_NO_SHORTCUT
+        label->setBuddy(namelineEdit);
+        label_2->setBuddy(passwordlineEdit);
+#endif // QT_NO_SHORTCUT
+        QWidget::setTabOrder(namelineEdit, passwordlineEdit);
+        QWidget::setTabOrder(passwordlineEdit, loginButton);
+        QWidget::setTabOrder(loginButton, registerButton);
+        QWidget::setTabOrder(registerButton, cancelButton);
+        QWidget::setTabOrder(cancelButton, graphicsView);
 
         retranslateUi(LoginWidget);
 
@@ -113,12 +122,12 @@ public:
 
     void retranslateUi(QWidget *LoginWidget)
     {
-        LoginWidget->setWindowTitle(QApplication::translate("LoginWidget", "Form", 0, QApplication::UnicodeUTF8));
-        label->setText(QApplication::translate("LoginWidget", "AccountName", 0, QApplication::UnicodeUTF8));
-        label_2->setText(QApplication::translate("LoginWidget", "Password", 0, QApplication::UnicodeUTF8));
-        registerButton->setText(QApplication::translate("LoginWidget", "Register", 0, QApplication::UnicodeUTF8));
-        cancelButton->setText(QApplication::translate("LoginWidget", "Cancel", 0, QApplication::UnicodeUTF8));
-        loginButton->setText(QApplication::translate("LoginWidget", "Login", 0, QApplication::UnicodeUTF8));
+        LoginWidget->setWindowTitle(QApplication::translate("LoginWidget", "Login", 0, QApplication::UnicodeUTF8));
+        label->setText(QApplication::translate("LoginWidget", "&Account", 0, QApplication::UnicodeUTF8));
+        label_2->setText(QApplication::translate("LoginWidget", "&Password", 0, QApplication::UnicodeUTF8));
+        registerButton->setText(QApplication::translate("LoginWidget", "&Register", 0, QApplication::UnicodeUTF8));
+        cancelButton->setText(QApplication::translate("LoginWidget", "&Cancel", 0, QApplication::UnicodeUTF8));
+        loginButton->setText(QApplication::translate("LoginWidget", "&Login", 0, QApplication::UnicodeUTF8));
         label_3->setText(QApplication::translate("LoginWidget", "statusMsg", 0, QApplication::UnicodeUTF8));
         Q_UNUSED(LoginWidget);
     } // retranslateUi

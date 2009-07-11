@@ -22,10 +22,12 @@ void LoginController::login()
     QString name=loginControl->ui()->namelineEdit->text();
     QString password=loginControl->ui()->passwordlineEdit->text();
 
-    if(User::checkPassword(name,password)!=0)
+    int id = User::checkPassword(name,password);
+
+    if(id != 0)
     {
-        this->user=User::getUserByName("WS");
-        ControlCenter(main,user);
+        this->user=User::getUserById(id);
+        ControlCenter(main,&user);
         loginControl->close();
         main->show();
     }
@@ -46,7 +48,11 @@ void LoginController::registers()
 
 void LoginController::registerSubmit(QString name,QString psw1,QString psw2)
 {
-    if(psw1==psw2)
+    if(psw1=="")
+    {
+        loginControl->ui()->label_3->setText("Passwoed Blank!");
+    }
+    else if(psw1==psw2)
     {
         User::createUser(name,psw1);
         loginControl->ui()->label_3->setText("Successful Register!");
