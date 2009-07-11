@@ -6,6 +6,7 @@
 #include "menutoolbarcontroller.h"
 #include "user.h"
 #include "nlogincontroller.h"
+#include "groupcontroller.h"
 
 class MenuToolBarController;
 class ControlCenter : public QObject
@@ -14,13 +15,14 @@ class ControlCenter : public QObject
 
 public:
     ControlCenter();
-    ControlCenter(BeitaReader*,User);
+    ControlCenter(BeitaReader*,User*);
     ~ControlCenter();
-    User user;
 
 private:
     BeitaReader *main;
+    User *user;
     MenuToolBarController *menuController;
+    GroupController *groupController;
 };
 
 #endif // CONTROLCENTER_H

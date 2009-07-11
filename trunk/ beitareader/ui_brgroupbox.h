@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'brgroupbox.ui'
 **
-** Created: Fri Jul 10 13:58:48 2009
+** Created: Sat Jul 11 15:43:06 2009
 **      by: Qt User Interface Compiler version 4.5.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -18,7 +18,6 @@
 #include <QtGui/QGroupBox>
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QHeaderView>
-#include <QtGui/QLCDNumber>
 #include <QtGui/QLabel>
 #include <QtGui/QPushButton>
 #include <QtGui/QSpacerItem>
@@ -30,100 +29,100 @@ class Ui_BRGroupBox
 {
 public:
     QFormLayout *formLayout;
-    QVBoxLayout *verticalLayout;
-    QHBoxLayout *horizontalLayout_7;
-    QLabel *welcomeLabel;
-    QSpacerItem *horizontalSpacer_4;
-    QHBoxLayout *horizontalLayout_6;
-    QLabel *updateLabel;
-    QLabel *timeLabel_2;
-    QSpacerItem *horizontalSpacer_6;
+    QVBoxLayout *verticalLayout_3;
     QHBoxLayout *horizontalLayout_2;
-    QLabel *timeLabel;
-    QLCDNumber *timeLcdNumber;
-    QSpacerItem *horizontalSpacer_5;
+    QLabel *greetLabel;
+    QSpacerItem *horizontalSpacer_2;
     QHBoxLayout *horizontalLayout;
-    QPushButton *passButton;
+    QVBoxLayout *verticalLayout;
+    QLabel *timeLabel;
+    QLabel *updateLabel;
+    QVBoxLayout *verticalLayout_2;
+    QLabel *reaftimelabel;
+    QLabel *updatetimeLabel;
+    QSpacerItem *horizontalSpacer_3;
+    QHBoxLayout *horizontalLayout_3;
     QPushButton *trendsButton;
+    QSpacerItem *horizontalSpacer;
 
     void setupUi(QGroupBox *BRGroupBox)
     {
         if (BRGroupBox->objectName().isEmpty())
             BRGroupBox->setObjectName(QString::fromUtf8("BRGroupBox"));
-        BRGroupBox->resize(266, 155);
+        BRGroupBox->resize(245, 143);
         formLayout = new QFormLayout(BRGroupBox);
         formLayout->setObjectName(QString::fromUtf8("formLayout"));
-        verticalLayout = new QVBoxLayout();
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        horizontalLayout_7 = new QHBoxLayout();
-        horizontalLayout_7->setObjectName(QString::fromUtf8("horizontalLayout_7"));
-        welcomeLabel = new QLabel(BRGroupBox);
-        welcomeLabel->setObjectName(QString::fromUtf8("welcomeLabel"));
-
-        horizontalLayout_7->addWidget(welcomeLabel);
-
-        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_7->addItem(horizontalSpacer_4);
-
-
-        verticalLayout->addLayout(horizontalLayout_7);
-
-        horizontalLayout_6 = new QHBoxLayout();
-        horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
-        updateLabel = new QLabel(BRGroupBox);
-        updateLabel->setObjectName(QString::fromUtf8("updateLabel"));
-
-        horizontalLayout_6->addWidget(updateLabel);
-
-        timeLabel_2 = new QLabel(BRGroupBox);
-        timeLabel_2->setObjectName(QString::fromUtf8("timeLabel_2"));
-
-        horizontalLayout_6->addWidget(timeLabel_2);
-
-        horizontalSpacer_6 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_6->addItem(horizontalSpacer_6);
-
-
-        verticalLayout->addLayout(horizontalLayout_6);
-
+        verticalLayout_3 = new QVBoxLayout();
+        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        timeLabel = new QLabel(BRGroupBox);
-        timeLabel->setObjectName(QString::fromUtf8("timeLabel"));
+        greetLabel = new QLabel(BRGroupBox);
+        greetLabel->setObjectName(QString::fromUtf8("greetLabel"));
 
-        horizontalLayout_2->addWidget(timeLabel);
+        horizontalLayout_2->addWidget(greetLabel);
 
-        timeLcdNumber = new QLCDNumber(BRGroupBox);
-        timeLcdNumber->setObjectName(QString::fromUtf8("timeLcdNumber"));
+        horizontalSpacer_2 = new QSpacerItem(88, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        horizontalLayout_2->addWidget(timeLcdNumber);
-
-        horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_2->addItem(horizontalSpacer_5);
+        horizontalLayout_2->addItem(horizontalSpacer_2);
 
 
-        verticalLayout->addLayout(horizontalLayout_2);
+        verticalLayout_3->addLayout(horizontalLayout_2);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        passButton = new QPushButton(BRGroupBox);
-        passButton->setObjectName(QString::fromUtf8("passButton"));
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        timeLabel = new QLabel(BRGroupBox);
+        timeLabel->setObjectName(QString::fromUtf8("timeLabel"));
 
-        horizontalLayout->addWidget(passButton);
+        verticalLayout->addWidget(timeLabel);
 
+        updateLabel = new QLabel(BRGroupBox);
+        updateLabel->setObjectName(QString::fromUtf8("updateLabel"));
+
+        verticalLayout->addWidget(updateLabel);
+
+
+        horizontalLayout->addLayout(verticalLayout);
+
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        reaftimelabel = new QLabel(BRGroupBox);
+        reaftimelabel->setObjectName(QString::fromUtf8("reaftimelabel"));
+
+        verticalLayout_2->addWidget(reaftimelabel);
+
+        updatetimeLabel = new QLabel(BRGroupBox);
+        updatetimeLabel->setObjectName(QString::fromUtf8("updatetimeLabel"));
+
+        verticalLayout_2->addWidget(updatetimeLabel);
+
+
+        horizontalLayout->addLayout(verticalLayout_2);
+
+        horizontalSpacer_3 = new QSpacerItem(18, 38, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_3);
+
+
+        verticalLayout_3->addLayout(horizontalLayout);
+
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         trendsButton = new QPushButton(BRGroupBox);
         trendsButton->setObjectName(QString::fromUtf8("trendsButton"));
 
-        horizontalLayout->addWidget(trendsButton);
+        horizontalLayout_3->addWidget(trendsButton);
+
+        horizontalSpacer = new QSpacerItem(118, 26, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer);
 
 
-        verticalLayout->addLayout(horizontalLayout);
+        verticalLayout_3->addLayout(horizontalLayout_3);
 
 
-        formLayout->setLayout(0, QFormLayout::LabelRole, verticalLayout);
+        formLayout->setLayout(0, QFormLayout::LabelRole, verticalLayout_3);
 
 
         retranslateUi(BRGroupBox);
@@ -135,11 +134,11 @@ public:
     {
         BRGroupBox->setWindowTitle(QApplication::translate("BRGroupBox", "GroupBox", 0, QApplication::UnicodeUTF8));
         BRGroupBox->setTitle(QApplication::translate("BRGroupBox", "Welcome!", 0, QApplication::UnicodeUTF8));
-        welcomeLabel->setText(QApplication::translate("BRGroupBox", "Morning, Admin!", 0, QApplication::UnicodeUTF8));
-        updateLabel->setText(QApplication::translate("BRGroupBox", "Last Update: ", 0, QApplication::UnicodeUTF8));
-        timeLabel_2->setText(QApplication::translate("BRGroupBox", "3 minutes ago", 0, QApplication::UnicodeUTF8));
+        greetLabel->setText(QApplication::translate("BRGroupBox", "Morning, Admin!", 0, QApplication::UnicodeUTF8));
         timeLabel->setText(QApplication::translate("BRGroupBox", "Reading Time: ", 0, QApplication::UnicodeUTF8));
-        passButton->setText(QApplication::translate("BRGroupBox", "&Change Password", 0, QApplication::UnicodeUTF8));
+        updateLabel->setText(QApplication::translate("BRGroupBox", "Last Update: ", 0, QApplication::UnicodeUTF8));
+        reaftimelabel->setText(QApplication::translate("BRGroupBox", "1h 40min", 0, QApplication::UnicodeUTF8));
+        updatetimeLabel->setText(QApplication::translate("BRGroupBox", "3 minutes ago", 0, QApplication::UnicodeUTF8));
         trendsButton->setText(QApplication::translate("BRGroupBox", "&Trends", 0, QApplication::UnicodeUTF8));
         Q_UNUSED(BRGroupBox);
     } // retranslateUi
