@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'addchanneldialog.ui'
 **
-** Created: Sat Jul 11 15:43:06 2009
+** Created: Wed Jul 15 17:38:02 2009
 **      by: Qt User Interface Compiler version 4.5.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -16,93 +16,160 @@
 #include <QtGui/QButtonGroup>
 #include <QtGui/QDialog>
 #include <QtGui/QDialogButtonBox>
-#include <QtGui/QGridLayout>
+#include <QtGui/QHBoxLayout>
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>
 #include <QtGui/QLineEdit>
 #include <QtGui/QPushButton>
-#include <QtGui/QTreeView>
+#include <QtGui/QSpacerItem>
+#include <QtGui/QTreeWidget>
 #include <QtGui/QVBoxLayout>
+#include <QtGui/QWidget>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_AddChannelDialog
 {
 public:
-    QGridLayout *gridLayout;
-    QTreeView *treeView;
+    QWidget *widget;
+    QVBoxLayout *verticalLayout_2;
+    QHBoxLayout *horizontalLayout_5;
+    QTreeWidget *dirTree;
     QVBoxLayout *verticalLayout;
+    QHBoxLayout *horizontalLayout_2;
     QLabel *label;
-    QLineEdit *lineEdit;
+    QSpacerItem *horizontalSpacer_2;
+    QLineEdit *folderLine;
+    QHBoxLayout *horizontalLayout_3;
     QLabel *label_2;
-    QLineEdit *lineEdit_2;
+    QSpacerItem *horizontalSpacer_3;
+    QLineEdit *urlLine;
+    QHBoxLayout *horizontalLayout_4;
     QLabel *label_3;
+    QSpacerItem *horizontalSpacer_4;
+    QLineEdit *nameLine;
+    QSpacerItem *verticalSpacer;
+    QHBoxLayout *horizontalLayout;
     QPushButton *checkRssButton;
+    QSpacerItem *horizontalSpacer;
     QDialogButtonBox *buttonBox;
 
     void setupUi(QDialog *AddChannelDialog)
     {
         if (AddChannelDialog->objectName().isEmpty())
             AddChannelDialog->setObjectName(QString::fromUtf8("AddChannelDialog"));
-        AddChannelDialog->resize(400, 300);
-        gridLayout = new QGridLayout(AddChannelDialog);
-        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        treeView = new QTreeView(AddChannelDialog);
-        treeView->setObjectName(QString::fromUtf8("treeView"));
+        AddChannelDialog->resize(473, 269);
+        widget = new QWidget(AddChannelDialog);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        widget->setGeometry(QRect(16, 21, 445, 238));
+        verticalLayout_2 = new QVBoxLayout(widget);
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
+        dirTree = new QTreeWidget(widget);
+        dirTree->setObjectName(QString::fromUtf8("dirTree"));
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(dirTree->sizePolicy().hasHeightForWidth());
+        dirTree->setSizePolicy(sizePolicy);
 
-        gridLayout->addWidget(treeView, 0, 0, 1, 1);
+        horizontalLayout_5->addWidget(dirTree);
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        label = new QLabel(AddChannelDialog);
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        label = new QLabel(widget);
         label->setObjectName(QString::fromUtf8("label"));
 
-        verticalLayout->addWidget(label);
+        horizontalLayout_2->addWidget(label);
 
-        lineEdit = new QLineEdit(AddChannelDialog);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        horizontalSpacer_2 = new QSpacerItem(68, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        verticalLayout->addWidget(lineEdit);
+        horizontalLayout_2->addItem(horizontalSpacer_2);
 
-        label_2 = new QLabel(AddChannelDialog);
+
+        verticalLayout->addLayout(horizontalLayout_2);
+
+        folderLine = new QLineEdit(widget);
+        folderLine->setObjectName(QString::fromUtf8("folderLine"));
+        folderLine->setEnabled(false);
+        folderLine->setReadOnly(true);
+
+        verticalLayout->addWidget(folderLine);
+
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
+        label_2 = new QLabel(widget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
 
-        verticalLayout->addWidget(label_2);
+        horizontalLayout_3->addWidget(label_2);
 
-        lineEdit_2 = new QLineEdit(AddChannelDialog);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        verticalLayout->addWidget(lineEdit_2);
+        horizontalLayout_3->addItem(horizontalSpacer_3);
 
-        label_3 = new QLabel(AddChannelDialog);
+
+        verticalLayout->addLayout(horizontalLayout_3);
+
+        urlLine = new QLineEdit(widget);
+        urlLine->setObjectName(QString::fromUtf8("urlLine"));
+
+        verticalLayout->addWidget(urlLine);
+
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
+        label_3 = new QLabel(widget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
 
-        verticalLayout->addWidget(label_3);
+        horizontalLayout_4->addWidget(label_3);
+
+        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_4->addItem(horizontalSpacer_4);
 
 
-        gridLayout->addLayout(verticalLayout, 0, 1, 1, 1);
+        verticalLayout->addLayout(horizontalLayout_4);
 
-        checkRssButton = new QPushButton(AddChannelDialog);
+        nameLine = new QLineEdit(widget);
+        nameLine->setObjectName(QString::fromUtf8("nameLine"));
+
+        verticalLayout->addWidget(nameLine);
+
+        verticalSpacer = new QSpacerItem(20, 13, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout->addItem(verticalSpacer);
+
+
+        horizontalLayout_5->addLayout(verticalLayout);
+
+
+        verticalLayout_2->addLayout(horizontalLayout_5);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        checkRssButton = new QPushButton(widget);
         checkRssButton->setObjectName(QString::fromUtf8("checkRssButton"));
 
-        gridLayout->addWidget(checkRssButton, 1, 0, 1, 1);
+        horizontalLayout->addWidget(checkRssButton);
 
-        buttonBox = new QDialogButtonBox(AddChannelDialog);
+        horizontalSpacer = new QSpacerItem(168, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer);
+
+        buttonBox = new QDialogButtonBox(widget);
         buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
+        buttonBox->setCenterButtons(false);
 
-        gridLayout->addWidget(buttonBox, 1, 1, 1, 1);
+        horizontalLayout->addWidget(buttonBox);
 
-        buttonBox->raise();
-        treeView->raise();
-        label->raise();
-        label_2->raise();
-        lineEdit->raise();
-        lineEdit_2->raise();
-        checkRssButton->raise();
-        label_3->raise();
-        label->raise();
+
+        verticalLayout_2->addLayout(horizontalLayout);
+
 
         retranslateUi(AddChannelDialog);
         QObject::connect(buttonBox, SIGNAL(accepted()), AddChannelDialog, SLOT(accept()));
@@ -113,11 +180,13 @@ public:
 
     void retranslateUi(QDialog *AddChannelDialog)
     {
-        AddChannelDialog->setWindowTitle(QApplication::translate("AddChannelDialog", "Dialog", 0, QApplication::UnicodeUTF8));
-        label->setText(QApplication::translate("AddChannelDialog", "ChannelName", 0, QApplication::UnicodeUTF8));
-        label_2->setText(QApplication::translate("AddChannelDialog", "ChannelURL", 0, QApplication::UnicodeUTF8));
-        label_3->setText(QApplication::translate("AddChannelDialog", "TextLabel", 0, QApplication::UnicodeUTF8));
-        checkRssButton->setText(QApplication::translate("AddChannelDialog", "&Check", 0, QApplication::UnicodeUTF8));
+        AddChannelDialog->setWindowTitle(QApplication::translate("AddChannelDialog", "Add Channel", 0, QApplication::UnicodeUTF8));
+        QTreeWidgetItem *___qtreewidgetitem = dirTree->headerItem();
+        ___qtreewidgetitem->setText(0, QApplication::translate("AddChannelDialog", "Folder List", 0, QApplication::UnicodeUTF8));
+        label->setText(QApplication::translate("AddChannelDialog", "Folder Name:", 0, QApplication::UnicodeUTF8));
+        label_2->setText(QApplication::translate("AddChannelDialog", "Channel URL:", 0, QApplication::UnicodeUTF8));
+        label_3->setText(QApplication::translate("AddChannelDialog", "Channel Name:", 0, QApplication::UnicodeUTF8));
+        checkRssButton->setText(QApplication::translate("AddChannelDialog", "Chec&k", 0, QApplication::UnicodeUTF8));
         Q_UNUSED(AddChannelDialog);
     } // retranslateUi
 

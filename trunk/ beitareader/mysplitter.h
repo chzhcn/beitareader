@@ -2,7 +2,7 @@
 #define MYSPLITTER_H
 
 #include <QSplitter>
-
+#include "mysplitterhandle.h"
 class MySplitter : public QSplitter
 {
     Q_OBJECT
@@ -22,8 +22,6 @@ protected:
 private:
     int tempLeft;
     int tempRight;
-//    bool Hide;
-//    Ui::MySplitter *ui;
 };
 
 #endif // MYSPLITTER_H

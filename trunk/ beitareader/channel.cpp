@@ -77,7 +77,7 @@ void Channel::updateChannel(Channel& channel)
 }
 
 //更新所有频道
-void Channel::updateIAllChannelsByUserID(int newUserID)
+/*void Channel::updateIAllChannelsByUserID(int newUserID)
 {
     QSqlQuery query;
     query.prepare("select * from Channel where userid = :userid");
@@ -102,21 +102,21 @@ void Channel::updateChannelByChannelID(int newChannelID)
         HttpGet* getter = new HttpGet(query.value(0).toInt(), QUrl(query.value(2).toString()),query.value(5).toInt());
         getter->getFile();
     }
-}
+}*/
 
 //通过FolderID获得所有频道
-QVector<Channel> Channel::getChannelsByFolderID(int newFolderID)
+QVector<Channel*> Channel::getChannelsByFolderID(int newFolderID)
 {
     QSqlQuery query;
     query.prepare("select * from Channel where parentid = :parentid");
     query.bindValue(":parentid", newFolderID);
     query.exec();
-    QVector<Channel> v;
+    QVector<Channel*> v;
     while(query.next())
     {
-        Channel channel(query.value(1).toString(),query.value(2).toString(),query.value(3).toInt(),
+        Channel *channel = new Channel(query.value(1).toString(),query.value(2).toString(),query.value(3).toInt(),
                         query.value(4).toInt(),query.value(5).toInt(),query.value(6).toInt(),query.value(7).toInt());
-        channel.id = query.value(0).toInt();
+        channel->id = query.value(0).toInt();
         v.append(channel);
     }
     return v;
@@ -129,4 +129,52 @@ void Channel::deleteChannelByChannelID(int newChannelID)
     query.prepare("delete from Channel where id = :id");
     query.bindValue(":id", newChannelID);
     query.exec();
+}
+
+Channel *Channel::getChannelByChannelID(int channelID)
+{
+    QSqlQuery query;
+    query.prepare("select * from Channel where id = :id");
+    query.bindValue(":id", channelID);
+    query.exec();
+    if (query.next())
+    {
+        Channel *channel = new Channel(query.value(1).toString(),query.value(2).toString(),query.value(3).toInt(),
+                        query.value(4).toInt(),query.value(5).toInt(),query.value(6).toInt(),
+                        query.value(7).toInt());
+        channel->id = query.value(0).toInt();
+        return channel;
+    }
+    return NULL;
+
+}
+
+QVector<Channel*> Channel::getChannelsByUserID(int newUserID)
+{
+    QSqlQuery query;
+    query.prepare("select * from Channel where userid = :userid");
+    query.bindValue(":userid", newUserID);
+    query.exec();
+    QVector<Channel*> v;
+    while(query.next())
+    {
+        Channel *channel = new Channel(query.value(1).toString(),query.value(2).toString(),query.value(3).toInt(),
+                        query.value(4).toInt(),query.value(5).toInt(),query.value(6).toInt(),query.value(7).toInt());
+        channel->id = query.value(0).toInt();
+        v.append(channel);
+    }
+    return v;
+}
+
+int Channel::getFavouriteChannelByUserID(int newUserId)
+{
+    QSqlQuery query;
+    query.prepare("select * from Channel where userid = :userid order by readnum desc");
+    query.bindValue(":userid", newUserId);
+    query.exec();
+    if(query.next())
+    { 
+        return query.value(0).toInt();
+    }
+    return 0;
 }

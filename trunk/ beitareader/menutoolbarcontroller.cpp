@@ -26,13 +26,13 @@ void MenuToolBarController::bindSignalAndSlot()
 
 void MenuToolBarController::addChannelDialog()
 {
-    AddChannelDialog *a=new AddChannelDialog(main);
+    AddChannelDialog *a=new AddChannelDialog(0, main);
     a->show();
 }
 
 void MenuToolBarController::addFolderDialog()
 {
-    AddFolderDialog *a=new AddFolderDialog(main);
+    AddFolderDialog *a=new AddFolderDialog(0, main);
     a->show();
 }
 
@@ -43,7 +43,7 @@ void MenuToolBarController::searchArticle()
 
 void MenuToolBarController::updateAllChannels()
 {
-    Channel::updateIAllChannelsByUserID(user->getUserID());
+    emit downloadRequest(true);
 }
 
 void MenuToolBarController::showStatusBar(bool isShown)

@@ -7,10 +7,6 @@
 MyTree::MyTree(QWidget *parent)
     : QTreeWidget(parent)
 {
-
-        controller = new TreeController;
-        controller->initTree(this);
-//        emit constructTree(this);
         setColumnCount(1);
         setHeaderLabel(" Channel list");
         setAcceptDrops( true );
@@ -19,18 +15,34 @@ MyTree::MyTree(QWidget *parent)
         connect( this, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(contextMenuEvent(const QPoint)));
         connect( this, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)), this, SLOT(on_item_doubleClicked(QTreeWidgetItem*,int)));
 
-        treeItemMenu = new QMenu;
-        QAction * renameAct = new QAction(tr("Rename"), treeItemMenu);
-        QAction * deleteAct = new QAction(tr("Delete"), treeItemMenu);
-        treeItemMenu->addAction( renameAct);
-        treeItemMenu->addAction( deleteAct);
+        QAction * renameAct = new QAction(tr("Rename"), this);
+        QAction * deleteAct = new QAction(tr("Delete"), this);
+        QAction * updateAct = new QAction(tr("Update This Channel"), this);
+        QAction * addChannelAct = new QAction(tr("Add Channel"), this);
+        QAction * addFolderAct = new QAction(tr("Add Folder"), this);
+        QAction * updateAllAct = new QAction(tr("Update All Channels"), this);
+
         connect(renameAct, SIGNAL(triggered()), this, SLOT(rename_clicked()));
         connect(deleteAct, SIGNAL(triggered()), this, SLOT(delete_clicked()));
+        connect(updateAct, SIGNAL(triggered()), this, SLOT(update_clicked()));
+        connect(addChannelAct, SIGNAL(triggered()), this, SLOT(addChannel_clicked()));
+        connect(addFolderAct, SIGNAL(triggered()), this, SLOT(addFolder_clicked()));
+        connect(updateAllAct, SIGNAL(triggered()), this, SLOT(updateAll_clicked()));
+
+        treeFolderMenu = new QMenu;
+        treeFolderMenu->addAction(renameAct);
+        treeFolderMenu->addAction(deleteAct);
+        treeFolderMenu->addAction(addFolderAct);
+        treeFolderMenu->addAction(addChannelAct);
+
+        treeChannelMenu = new QMenu;
+        treeChannelMenu->addAction(updateAct);
+        treeChannelMenu->addAction(deleteAct);
+        treeChannelMenu->addAction(renameAct);
+
         treeBlankMenu = new QMenu;
-        QAction * addChannelAct = new QAction(tr("Add Channel"), treeBlankMenu);
-        QAction * addFolderAct = new QAction(tr("Add Folder"), treeBlankMenu);
-        treeBlankMenu->addAction(addChannelAct);
         treeBlankMenu->addAction(addFolderAct);
+        treeBlankMenu->addAction(updateAllAct);
 }
 
 MyTree::~MyTree()
@@ -47,6 +59,8 @@ bool MyTree::dropMimeData(QTreeWidgetItem *parent, int index, const QMimeData *d
         if (item == currentItem())
         {
             flag = false;
+            QCursor cursor;
+            cursor.setShape(Qt::ForbiddenCursor);
             break;
         }
         else
@@ -56,16 +70,25 @@ bool MyTree::dropMimeData(QTreeWidgetItem *parent, int index, const QMimeData *d
     }
     if (flag)
     {
-    if(parent)
-    {
-//        if(action==Qt::MoveAction)
-        QString str=data->text();
-        QTreeWidgetItem *item = currentItem()->clone();
-        parent->addChild(item);
-        delete currentItem();
+        if(parent)
+        {
+            QString str=data->text();
+            QTreeWidgetItem *item = currentItem()->clone();
+            parent->addChild(item);
+            if(currentItem()->type() == folder)
+            {
+                Folder::getFolderByID(currentItem()->data(0, 1).toInt())->
+                        setParentFolder(Folder::getFolderByID(parent->data(0,1).toInt()));
+            }
+            else if(currentItem()->type() == channel)
+            {
+                Channel::getChannelByChannelID(currentItem()->data(0,1).toInt())->
+                        setChannelParentid(parent->data(0, 1).toInt());
+            }
+            delete currentItem();
+        }
+        return true;
     }
-    return true;
-}
     else
     {
         return false;
@@ -87,11 +110,16 @@ QMimeData *MyTree::mimeData(const QList<QTreeWidgetItem *> items) const
 
 void MyTree::contextMenuEvent(const QPoint &pos)
 {
-
-//    connect(addChannelAct, SIGNAL(triggered()), this, SLOT(
-    if(this->itemAt(pos))
+    if (this->itemAt(pos))
     {
-        treeItemMenu->exec(QCursor::pos());
+        if(this->itemAt(pos)->type() == folder)
+        {
+            treeFolderMenu->exec(QCursor::pos());
+        }
+        else if(this->itemAt(pos)->type() == channel)
+        {
+            treeChannelMenu->exec(QCursor::pos());
+        }
     }
     else
     {
@@ -102,47 +130,51 @@ void MyTree::contextMenuEvent(const QPoint &pos)
 
 void MyTree::on_item_doubleClicked(QTreeWidgetItem *item, int column)
 {
-    //需要判断item的类型，如果是channel则不能编辑
-    item->setFlags(item->flags() | Qt::ItemIsEditable);
-//    openPersistentEditor(item, 0);
-    editItem(item, 0);
+        item->setFlags(item->flags() | Qt::ItemIsEditable);
+        editItem(item, 0);
 }
 
 void MyTree::rename_clicked()
 {
-    //需要判断item类型，如果是channel则右键菜单里没有rename
     currentItem()->setFlags(currentItem()->flags() | Qt::ItemIsEditable);
     editItem(currentItem(), 0);
 }
 
 void MyTree::delete_clicked()
 {
-    if(currentItem()->childCount()!=0)
-    {
-        QMessageBox::StandardButton ret;
-         ret = QMessageBox::warning(this, tr("Delete"),
-                      tr("Do you want to delete all the sub items?"),
-                      QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel);
-         if (ret == QMessageBox::No)
-         {
-                for(int i = 0; i < currentItem()->childCount(); i++)
-                {
-                    QTreeWidgetItem *item = currentItem()->child(i)->clone();
-                    currentItem()->parent()->addChild(item);
-                }
-                delete currentItem();
-            }
-         else if (ret == QMessageBox::Yes)
-         {
-             delete currentItem();
-         }
-     }
-    else
-    {
-        QTreeWidgetItem *item = currentItem();
-//        controller->deleteFolderOrChannel(item);
-        delete item;
-    }
+    QTreeWidgetItem *item = currentItem();
+    emit deleteItem(item);
+    delete item;
 }
+
+void MyTree::update_clicked()
+{
+    int i = currentItem()->data(0, 1).toInt();
+    emit downRequest(i, true);
+}
+
+void MyTree::updateAll_clicked()
+{
+    emit downAllRequest(true);
+}
+
+void MyTree::addChannel_clicked()
+{
+        emit addChannelFromTree();
+}
+
+void MyTree::addFolder_clicked()
+{
+    emit addFolderFromTree();
+}
+
+void MyTree::setUser(User *_user)
+{
+    user = _user;
+}
+
+
+
+
 
 

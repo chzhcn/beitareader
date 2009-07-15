@@ -1,7 +1,7 @@
 #ifndef CHANNEL_H
 #define CHANNEL_H
 #include "item.h"
-#include "httpget.h"
+
 class QUrl;
 class Channel
 {
@@ -14,10 +14,14 @@ public:
     /*静态方法*/
     static bool insertChannel(Channel& channel);
     static void deleteChannel(Channel& channel);
-    static void updateIAllChannelsByUserID(int newUserID);
-    static void updateChannelByChannelID(int newChannelID);
-    static QVector<Channel> getChannelsByFolderID(int newFolderID);
+//    static void updateIAllChannelsByUserID(int newUserID);
+//    static void updateChannelByChannelID(int newChannelID);
+    static int getFavouriteChannelByUserID(int newUserId);
+    static QVector<Channel*> getChannelsByFolderID(int newFolderID);
     static void deleteChannelByChannelID(int newChannelID);
+    static Channel *getChannelByChannelID(int channelID);
+    static QVector<Channel*> getChannelsByUserID(int newUserID);
+
     /*属性的set和get方法*/
     int getChannelID(){return id;}
     //void setChannelName(QString& newChannelName){name = newChannelName;}
@@ -26,7 +30,7 @@ public:
     QString getChannelTitle(){return title;}
     void setChannelUrl(QString& newChannelUrl){url = newChannelUrl;updateChannel(*this);}
     QString getChannelUrl(){return url;}
-    void setChannelParentid(int& newChannelParentid){parentid = newChannelParentid;updateChannel(*this);}
+    void setChannelParentid(int newChannelParentid){parentid = newChannelParentid;updateChannel(*this);}
     int getChannelParentid(){return parentid;}
     void setChannelSavenum(int& newSavenum){savenum = newSavenum;updateChannel(*this);}
     int getChannelSavenum(){return savenum;}

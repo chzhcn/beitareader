@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'searchtab.ui'
 **
-** Created: Sat Jul 11 09:51:14 2009
+** Created: Wed Jul 15 17:38:02 2009
 **      by: Qt User Interface Compiler version 4.5.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -56,7 +56,7 @@ public:
     {
         if (SearchTab->objectName().isEmpty())
             SearchTab->setObjectName(QString::fromUtf8("SearchTab"));
-        SearchTab->resize(537, 395);
+        SearchTab->resize(302, 152);
         formLayout = new QFormLayout(SearchTab);
         formLayout->setObjectName(QString::fromUtf8("formLayout"));
         formLayout->setFieldGrowthPolicy(QFormLayout::AllNonFixedFieldsGrow);
@@ -108,6 +108,7 @@ public:
 
         fromDateEdit_3 = new QDateEdit(SearchTab);
         fromDateEdit_3->setObjectName(QString::fromUtf8("fromDateEdit_3"));
+        fromDateEdit_3->setCalendarPopup(true);
 
         horizontalLayout_18->addWidget(fromDateEdit_3);
 
@@ -123,6 +124,7 @@ public:
 
         toDateEdit_3 = new QDateEdit(SearchTab);
         toDateEdit_3->setObjectName(QString::fromUtf8("toDateEdit_3"));
+        toDateEdit_3->setCalendarPopup(true);
 
         horizontalLayout_19->addWidget(toDateEdit_3);
 
@@ -152,6 +154,12 @@ public:
 #ifndef QT_NO_SHORTCUT
         label->setBuddy(searchLineEdit_3);
 #endif // QT_NO_SHORTCUT
+        QWidget::setTabOrder(searchLineEdit_3, categoryComboBox_3);
+        QWidget::setTabOrder(categoryComboBox_3, radioButton);
+        QWidget::setTabOrder(radioButton, radioButton_2);
+        QWidget::setTabOrder(radioButton_2, fromDateEdit_3);
+        QWidget::setTabOrder(fromDateEdit_3, toDateEdit_3);
+        QWidget::setTabOrder(toDateEdit_3, searchButton_3);
 
         retranslateUi(SearchTab);
 

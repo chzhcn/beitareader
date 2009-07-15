@@ -1,23 +1,17 @@
 #include "mysplitter.h"
-//#include "ui_mysplitter.h"
-#include "mysplitterhandle.h"//我加
 
 MySplitter::MySplitter(QWidget *parent)
     : QSplitter(parent)//, ui(new Ui::MySplitter)
 {
-
     setHandleWidth(10);
-//    Hide = false;
-//    tempWidth = 0;
+
     tempLeft = 0;
     tempRight = 0;
-//    tempWidth = this->sizes().at(0);
-//    ui->setupUi(this);
 }
 
 MySplitter::~MySplitter()
 {
-//    delete ui;
+
 }
 
 QSplitterHandle* MySplitter::createHandle()

@@ -1,18 +1,16 @@
 #ifndef BEITAREADER_H
 #define BEITAREADER_H
-#include "mytree.h"
 
 #include <QtGui/QMainWindow>
 #include "ui_beitareader.h"
-//#include "menuandtoolbarcontroller.h"
-
-//#include "mysplitter.h"
-//#include "brsplitter.h"
+#include "mytree.h"
 
 namespace Ui
 {
     class BeitaReader;
 }
+
+class WebBrowser;
 
 class MyTree;
 //class BeitaReader;
@@ -26,9 +24,9 @@ public:
     BeitaReader(QWidget *parent = 0);
     ~BeitaReader();
     Ui::BeitaReader *ui;
+    MyTree *myTree;
 
-private:
-    MyTree * myTree;
+private:    
     //Ui::BeitaReader *ui;
     //void setSignalAndSlot();
     //MenuAndToolBarController *menucontroller;

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'beitareader.ui'
 **
-** Created: Sat Jul 11 13:54:37 2009
+** Created: Wed Jul 15 17:38:02 2009
 **      by: Qt User Interface Compiler version 4.5.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -14,7 +14,7 @@
 #include <QtGui/QAction>
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
-#include <QtGui/QGridLayout>
+#include <QtGui/QHBoxLayout>
 #include <QtGui/QHeaderView>
 #include <QtGui/QMainWindow>
 #include <QtGui/QMenu>
@@ -25,6 +25,7 @@
 #include <QtGui/QToolBar>
 #include <QtGui/QWidget>
 #include "brgroupbox.h"
+#include "collectiontab.h"
 #include "mysplitter.h"
 #include "searchtab.h"
 #include "webbrowser.h"
@@ -48,15 +49,14 @@ public:
     QAction *helpAction;
     QAction *aboutAction;
     QWidget *centralWidget;
-    QGridLayout *gridLayout;
+    QHBoxLayout *horizontalLayout;
     MySplitter *splitter_2;
     QSplitter *splitter;
     BRGroupBox *groupBox;
     QTabWidget *tabWidget;
-    QWidget *channelTab;
-    QWidget *favorTab;
+    CollectionTab *favorTab;
     SearchTab *searchTab;
-    WebBrowser *widget;
+    WebBrowser *webWidget;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QMenu *menuView;
@@ -68,7 +68,7 @@ public:
     {
         if (BeitaReader->objectName().isEmpty())
             BeitaReader->setObjectName(QString::fromUtf8("BeitaReader"));
-        BeitaReader->resize(1600, 900);
+        BeitaReader->resize(592, 173);
         addChannelAction = new QAction(BeitaReader);
         addChannelAction->setObjectName(QString::fromUtf8("addChannelAction"));
         addChannelFolderAction = new QAction(BeitaReader);
@@ -100,10 +100,10 @@ public:
         aboutAction->setObjectName(QString::fromUtf8("aboutAction"));
         centralWidget = new QWidget(BeitaReader);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
-        gridLayout = new QGridLayout(centralWidget);
-        gridLayout->setSpacing(6);
-        gridLayout->setMargin(11);
-        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        horizontalLayout = new QHBoxLayout(centralWidget);
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setMargin(11);
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         splitter_2 = new MySplitter(centralWidget);
         splitter_2->setObjectName(QString::fromUtf8("splitter_2"));
         splitter_2->setOrientation(Qt::Horizontal);
@@ -112,13 +112,20 @@ public:
         splitter->setOrientation(Qt::Vertical);
         groupBox = new BRGroupBox(splitter);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
+        QSizePolicy sizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(groupBox->sizePolicy().hasHeightForWidth());
+        groupBox->setSizePolicy(sizePolicy);
         splitter->addWidget(groupBox);
         tabWidget = new QTabWidget(splitter);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
-        channelTab = new QWidget();
-        channelTab->setObjectName(QString::fromUtf8("channelTab"));
-        tabWidget->addTab(channelTab, QString());
-        favorTab = new QWidget();
+        QSizePolicy sizePolicy1(QSizePolicy::Maximum, QSizePolicy::Expanding);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(tabWidget->sizePolicy().hasHeightForWidth());
+        tabWidget->setSizePolicy(sizePolicy1);
+        favorTab = new CollectionTab();
         favorTab->setObjectName(QString::fromUtf8("favorTab"));
         tabWidget->addTab(favorTab, QString());
         searchTab = new SearchTab();
@@ -126,16 +133,21 @@ public:
         tabWidget->addTab(searchTab, QString());
         splitter->addWidget(tabWidget);
         splitter_2->addWidget(splitter);
-        widget = new WebBrowser(splitter_2);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        splitter_2->addWidget(widget);
+        webWidget = new WebBrowser(splitter_2);
+        webWidget->setObjectName(QString::fromUtf8("webWidget"));
+        QSizePolicy sizePolicy2(QSizePolicy::Minimum, QSizePolicy::Preferred);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(webWidget->sizePolicy().hasHeightForWidth());
+        webWidget->setSizePolicy(sizePolicy2);
+        splitter_2->addWidget(webWidget);
 
-        gridLayout->addWidget(splitter_2, 0, 0, 1, 1);
+        horizontalLayout->addWidget(splitter_2);
 
         BeitaReader->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(BeitaReader);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1600, 30));
+        menuBar->setGeometry(QRect(0, 0, 592, 23));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
         menuView = new QMenu(menuBar);
@@ -184,7 +196,7 @@ public:
 
         retranslateUi(BeitaReader);
 
-        tabWidget->setCurrentIndex(2);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(BeitaReader);
@@ -239,9 +251,8 @@ public:
         helpAction->setText(QApplication::translate("BeitaReader", "Help", 0, QApplication::UnicodeUTF8));
         helpAction->setShortcut(QApplication::translate("BeitaReader", "F1", 0, QApplication::UnicodeUTF8));
         aboutAction->setText(QApplication::translate("BeitaReader", "About", 0, QApplication::UnicodeUTF8));
-        groupBox->setTitle(QApplication::translate("BeitaReader", "GroupBox", 0, QApplication::UnicodeUTF8));
-        tabWidget->setTabText(tabWidget->indexOf(channelTab), QApplication::translate("BeitaReader", "Your Channels", 0, QApplication::UnicodeUTF8));
-        tabWidget->setTabText(tabWidget->indexOf(favorTab), QApplication::translate("BeitaReader", "Your Favorates", 0, QApplication::UnicodeUTF8));
+        groupBox->setTitle(QApplication::translate("BeitaReader", "Welcome!", 0, QApplication::UnicodeUTF8));
+        tabWidget->setTabText(tabWidget->indexOf(favorTab), QApplication::translate("BeitaReader", "Favorates", 0, QApplication::UnicodeUTF8));
         tabWidget->setTabText(tabWidget->indexOf(searchTab), QApplication::translate("BeitaReader", "Search", 0, QApplication::UnicodeUTF8));
         menuFile->setTitle(QApplication::translate("BeitaReader", "File", 0, QApplication::UnicodeUTF8));
         menuView->setTitle(QApplication::translate("BeitaReader", "View", 0, QApplication::UnicodeUTF8));

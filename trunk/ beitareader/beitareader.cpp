@@ -1,13 +1,12 @@
 #include "beitareader.h"
-#include "ui_beitareader.h"
-#include "mytree.h"
 
 BeitaReader::BeitaReader(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::BeitaReader)//, brSplitter(new BRSplitter)
 {
     ui->setupUi(this);
     myTree = new MyTree;
-    ui->tabWidget->addTab(myTree, "Your Channels");
+    ui->tabWidget->insertTab(0,myTree, "Channels");
+    ui->tabWidget->setCurrentIndex(0);
 //    menucontroller=new MenuAndToolBarController();
 //    this->setCentralWidget(brSplitter);
 //    this->setSignalAndSlot();

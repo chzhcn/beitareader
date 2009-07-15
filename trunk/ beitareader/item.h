@@ -17,6 +17,7 @@ public:
     /*静态方法*/
     static void insertItem(Item& );
     static void deleteItem(Item& );
+
     static QVector<Item*> selectNotRead();
     static QVector<Item*> selectIsRead();
     static QVector<Item*> searchByAuthor(QString );

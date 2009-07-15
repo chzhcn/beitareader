@@ -1,10 +1,10 @@
 #include "collection.h"
-Collection::Collection(QString newName,QString newTitle,QString newLink,int newUserid)
+Collection::Collection(QString newName,QString newLink,int newUserid,int newParentId)
 {
     name = newName;
-    title = newTitle;
     link = newLink;
     userid = newUserid;
+    parentid = newParentId;
 }
 Collection::Collection()
 {
@@ -14,11 +14,11 @@ Collection::Collection()
 void Collection::updateCollection(Collection& collection)
 {
     QSqlQuery query;
-    query.prepare("update Collection set name=:name,title=:title,link=:link,userid=:userid where id=:id");
+    query.prepare("update Collection set name=:name,link=:link,userid=:userid, parentid=:parentid where id=:id");
     query.bindValue(":name",collection.name);
-    query.bindValue(":title",collection.title);
     query.bindValue(":link",collection.link);
     query.bindValue(":userid",collection.userid);
+    query.bindValue(":parentid",collection.parentid);
     query.bindValue(":id",collection.id);
     query.exec();
 }
@@ -33,13 +33,13 @@ void Collection::insertCollection(Collection& collection)
     query.exec();
     if(query.next())
     {
-        QMessageBox::about(0,"Error!",QString::fromLocal8Bit("该网页已被收藏"));
+        //QMessageBox::about(0,"Error!",QString::fromLocal8Bit("该网页已被收藏"));
         return;
     }
-    query.prepare("insert into Collection(name,title,link,userid) values(:name,:title,:link,:userid)");
+    query.prepare("insert into Collection(name,link,userid,parentid) values(:name,:link,:userid,:parentid)");
     query.bindValue(":name",collection.name);
-    query.bindValue(":title",collection.title);
     query.bindValue(":link",collection.link);
+    query.bindValue(":parentid",collection.parentid);
     query.bindValue(":userid",collection.userid);
     query.exec();
     collection.id = query.lastInsertId().toInt();
@@ -62,4 +62,39 @@ void Collection::deleteCollectionByID(int newCollectionID)
     query.prepare("delete from Collection where id = :id");
     query.bindValue(":id", newCollectionID);
     query.exec();
+}
+
+//通过收藏文章的组ID获得该组所有collection
+QVector<Collection*> Collection::getCollectionsByParentID(int parentID, int userID)
+{
+    QVector<Collection*> c;
+    QSqlQuery query;
+    query.prepare("select * from Collection where parentid = :parentid and userid = :userid");
+    query.bindValue(":parentid", parentID);
+    query.bindValue(":userid", userID);
+    query.exec();
+    while(query.next())
+    {
+        Collection *collection = new Collection(query.value(1).toString(), query.value(2).toString(),
+                                                query.value(3).toInt(), query.value(4).toInt());
+        collection->id = query.value(0).toInt();
+        c.append(collection);
+    }
+    return c;
+}
+
+Collection *Collection::getCollectionByID(int newID)
+{
+    QSqlQuery query;
+    query.prepare("select * from Collection where id = :id");
+    query.bindValue(":id", newID);
+    query.exec();
+    if(query.next())
+    {
+        Collection *collection = new Collection(query.value(1).toString(), query.value(2).toString(),
+                                                query.value(3).toInt(), query.value(4).toInt());
+        collection->id = query.value(0).toInt();
+        return collection;
+    }
+    return NULL;
 }

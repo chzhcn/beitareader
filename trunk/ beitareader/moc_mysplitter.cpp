@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mysplitter.h'
 **
-** Created: Sat Jul 11 15:44:14 2009
+** Created: Wed Jul 15 17:38:24 2009
 **      by: The Qt Meta Object Compiler version 61 (Qt 4.5.1)
 **
 ** WARNING! All changes made in this file will be lost!

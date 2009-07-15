@@ -6,16 +6,16 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1600</width>
-    <height>900</height>
+    <width>592</width>
+    <height>173</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Beita Reader</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
      <widget class="MySplitter" name="splitter_2">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
@@ -25,22 +25,29 @@
         <enum>Qt::Vertical</enum>
        </property>
        <widget class="BRGroupBox" name="groupBox">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="title">
          <string>Welcome!</string>
         </property>
        </widget>
        <widget class="QTabWidget" name="tabWidget">
-        <property name="currentIndex">
-         <number>2</number>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
         </property>
-        <widget class="QWidget" name="channelTab">
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="CollectionTab" name="favorTab">
          <attribute name="title">
-          <string>Your Channels</string>
-         </attribute>
-        </widget>
-        <widget class="QWidget" name="favorTab">
-         <attribute name="title">
-          <string>Your Favorates</string>
+          <string>Favorates</string>
          </attribute>
         </widget>
         <widget class="SearchTab" name="searchTab">
@@ -50,7 +57,14 @@
         </widget>
        </widget>
       </widget>
-      <widget class="WebBrowser" name="widget" native="true"/>
+      <widget class="WebBrowser" name="webWidget" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
      </widget>
     </item>
    </layout>
@@ -60,8 +74,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1600</width>
-     <height>30</height>
+     <width>592</width>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -264,6 +278,12 @@
    <class>WebBrowser</class>
    <extends>QWidget</extends>
    <header>webbrowser.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>CollectionTab</class>
+   <extends>QWidget</extends>
+   <header>collectiontab.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
