@@ -33,6 +33,9 @@ public slots:
     void settingsDialog();
     void setUserInfo(QString psw, int autoRefresh, int startRefresh, int readFilter, int showAbs
                    , int refreshTime, int autoMark);
+
+signals:
+    void downloadRequest(bool);
 };
 
 #endif // MENUTOOLBARCONTROLLER_H

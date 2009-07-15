@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'brgroupbox.h'
 **
-** Created: Sat Jul 11 15:44:07 2009
+** Created: Wed Jul 15 17:38:22 2009
 **      by: The Qt Meta Object Compiler version 61 (Qt 4.5.1)
 **
 ** WARNING! All changes made in this file will be lost!

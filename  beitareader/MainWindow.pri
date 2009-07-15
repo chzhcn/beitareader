@@ -6,12 +6,20 @@ HEADERS += $$PWD/beitareader.h \
     webbrowser.h \
     loginwidget.h \
     mytree.h \
-    treecontroller.h
+    channelarea.h \
+    rsswidget.h \
+    rssscrollarea.h \
+    feed.h \
+    collectiontab.h
 FORMS += $$PWD/beitareader.ui \
     $$PWD/brgroupbox.ui \
     $$PWD/searchtab.ui \
     webbrowser.ui \
-    loginwidget.ui
+    loginwidget.ui \
+    channelarea.ui \
+    rssscrollarea.ui \
+    feed.ui \
+    collectiontab.ui
 SOURCES += $$PWD/beitareader.cpp \
     $$PWD/brgroupbox.cpp \
     $$PWD/searchtab.cpp \
@@ -20,4 +28,8 @@ SOURCES += $$PWD/beitareader.cpp \
     webbrowser.cpp \
     loginwidget.cpp \
     mytree.cpp \
-    treecontroller.cpp
+    channelarea.cpp \
+    rsswidget.cpp \
+    rssscrollarea.cpp \
+    feed.cpp \
+    collectiontab.cpp

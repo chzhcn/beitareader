@@ -18,6 +18,7 @@ public:
     void setParentFolder(Folder* thisParentFolder);
     QString getParentFolderName(){return this->parentFolder->name;}
     int getParentID(){return parentid;}
+//    void setParentID(int newparentid){parentid = newparentid;updateFolder(*this);}
 
     static Folder* createRootFolder(QString folderName,int newUserid);
     static QVector<Folder*> getAllFolder();

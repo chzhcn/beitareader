@@ -6,6 +6,7 @@ LoginWidget::LoginWidget(QWidget *parent) :
     m_ui(new Ui::LoginWidget)
 {
     m_ui->setupUi(this);
+
 }
 
 LoginWidget::~LoginWidget()

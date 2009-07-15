@@ -7,6 +7,9 @@
 #include "user.h"
 #include "nlogincontroller.h"
 #include "groupcontroller.h"
+#include "treecontroller.h"
+#include "webcontroller.h"
+#include "downloadcontroller.h"
 
 class MenuToolBarController;
 class ControlCenter : public QObject
@@ -23,6 +26,9 @@ private:
     User *user;
     MenuToolBarController *menuController;
     GroupController *groupController;
+    TreeController *treeController;
+    WebController *webController;
+    DownloadController *downloadController;
 };
 
 #endif // CONTROLCENTER_H

@@ -1,4 +1,5 @@
 #include "item.h"
+#include <QMessageBox>
 
 Item::Item(QString newTitle, QString newLink , QString newDescription ,
            QString newAuthor , QDate newPubdate, int newIsread,int newChannelid)
@@ -108,7 +109,11 @@ QVector<Item*> Item::selectIsRead()
 }
 
 //通过作者关键字进行搜索，返回Item对象集合
+//<<<<<<< .mine
+//QVector<Item*> Item::searchByAuthor(QString& searchString)
+//=======
 QVector<Item*> Item::searchByAuthor(QString searchString)
+//>>>>>>> .r6
 {
     QSqlQuery query;
     query.exec("select * from Item where author like '%"+searchString+"%'");
@@ -116,7 +121,11 @@ QVector<Item*> Item::searchByAuthor(QString searchString)
 }
 
 //通过文章标题关键字进行搜索，返回Item对象集合
+//<<<<<<< .mine
+//QVector<Item*> Item::searchByTitle(QString& searchString)
+//=======
 QVector<Item*> Item::searchByTitle(QString searchString)
+//>>>>>>> .r6
 {
     QSqlQuery query;
     query.exec("select * from Item where title like '%"+searchString+"%'");
@@ -124,7 +133,11 @@ QVector<Item*> Item::searchByTitle(QString searchString)
 }
 
 //通过摘要关键字进行搜索，返回Item对象集合
+//<<<<<<< .mine
+//QVector<Item*> Item::searchByDescription(QString& searchString)
+//=======
 QVector<Item*> Item::searchByDescription(QString searchString)
+//>>>>>>> .r6
 {
     QSqlQuery query;
     query.exec("select * from Item where description like '%"+searchString+"%'");
@@ -132,7 +145,11 @@ QVector<Item*> Item::searchByDescription(QString searchString)
 }
 
 //通过地址链接关键字进行搜索，返回Item对象集合
+//<<<<<<< .mine
+//QVector<Item*> Item::searchByLink(QString& searchString)
+//=======
 QVector<Item*> Item::searchByLink(QString searchString)
+//>>>>>>> .r6
 {
     QSqlQuery query;
     query.exec("select * from Item where link like '%"+searchString+"%'");
@@ -140,14 +157,22 @@ QVector<Item*> Item::searchByLink(QString searchString)
 }
 
 //通过日期进行搜索，返回Item对象集合
+//<<<<<<< .mine
+//QVector<Item*> Item::searchByPubdate(QDate& date1, QDate& date2)
+//=======
 QVector<Item*> Item::searchByPubdate(QDate date1, QDate date2)
+//>>>>>>> .r6
 {
     QSqlQuery query;
     QVector<Item*> v;
     query.exec("select * from Item");
     while(query.next())
     {
+//<<<<<<< .mine
+//        Item* item = new Item(query.value(1).toString(),query.value(2).toString(),query.value(3).toString(),
+//=======
         Item *item = new Item(query.value(1).toString(),query.value(2).toString(),query.value(3).toString(),
+//>>>>>>> .r6
                  query.value(4).toString(),query.value(5).toDate(),query.value(6).toInt(),
                  query.value(7).toInt());
         if(query.value(5).toDate() >date1 && query.value(5).toDate() < date2)
@@ -169,8 +194,13 @@ QVector<Item*> Item::vectorOfItem(QSqlQuery& query)
     return v;
 }
 
+//<<<<<<< .mine
+//通过channelid获取所有的item
+//QVector<Item*> Item::getItemsByChannelID(int newChannelID)
+//=======
 //通过channelid获取所有的item,并按时间降序
 QVector<Item*> Item::getItemsByChannelIDDescByDate(int newChannelID)
+//>>>>>>> .r6
 {
     QSqlQuery query;
     query.prepare("select * from Item where channelid = :channelid order by pubdate desc");
@@ -191,6 +221,7 @@ QVector<Item*> Item::getItemsByChannelIDAscByDate(int newChannelID)
 
 QVector<Item*> Item::getItemsByChannelID(int newChannelID)
 {
+//    QMessageBox::about(0, "in", "in");
     QSqlQuery query;
     query.prepare("select * from Item where channelid = :channelid");
     query.bindValue(":channelid", newChannelID);
